@@ -80,6 +80,10 @@ SendFuuds is an application where users can get notified that their food is abou
 ### Wireframes
 https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
 
+Gif showcasing wireframe:
+
+<img src='https://i.imgur.com/Ud3Cvog.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
+
 ---
 
 ### App Pitch Presentation

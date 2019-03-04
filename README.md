@@ -17,19 +17,18 @@ SendFuuds is an application where users can get notified that their food is abou
 ### User Stories
 
 **Required Must-have Stories**
- * User must be able to enter the expiration date of their groceries
  * Users must be able to login, sign up, and log out.
+ * User must be able to enter the expiration date of their groceries
  * Users must be able to search and add friends.
- * Users must be able to notify friends about getting or sharing their about to expire food.
+ * Users must be able to notify friends about getting or sharing their soon-to-expire food.
 
 **Optional Nice-to-have Stories**
-
- * Users have a profile page.
+ * At the end of each month, show how much food was wasted.
+ * Users have a profile page
  * Users can see mutual friends.
  * Users can share on other social media, such as Instagram or Facebook.
  * Users can livestream themselves eating.
  * Users can filter out searches for specific food.
- * At the end of each month, show how much food was wasted.
 
 ---
 
@@ -37,15 +36,16 @@ SendFuuds is an application where users can get notified that their food is abou
 
  * Login Screen
      * User can login
- * Registration Screen
      * User can create a new account
- * Stream
+ * Stream (Home Screen)
      * User can view a feed of their own food and their friends' food.
- * Creation
-     * User can post a new food to their feed and add the expiration date
- * Search
+ * Creation (Post Screen)
+     * User can post a new food to their feed, add the expiration date, and a brief description.
+ * Search Screen
      * User can search for other users
      * User can add another user
+ * Send Request Screen
+     * User can ask friends if they want their soon-to-expire food.
 
 ---
 
@@ -61,19 +61,19 @@ SendFuuds is an application where users can get notified that their food is abou
 **Flow Navigation**
 
  * Login Screen
-    => Home
- * Registration Screen
-    => Home
-    => Future version might include verifying information.
- * Stream Screen
-    => Login Screen
+    => Home after logging in or signing up.
+ * Stream (Home Screen)
+    => Login Screen by clicking the Logout button.
     => Future version might involve navigation to a profile page for a user.
- * Creation Screen
-    => Home (after you finish posting the food)
+ * Creation (Post Screen)
+    => Home after a user posts their food.
+    => Home by clicking the Cancel button.
  * Search Screen
-    => None, but future version might involve navigation to a profile page for a user.
-
-
+    => Home by clicking the Home button.
+ * Send Request Screen
+    => Home after sending a request.
+    => Home by clicking the Cancel button.
+    
 
 ---
 

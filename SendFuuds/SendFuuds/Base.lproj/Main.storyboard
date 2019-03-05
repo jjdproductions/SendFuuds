@@ -62,6 +62,9 @@
                                     <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUR-Jb-WCd"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_force" translatesAutoresizingMaskIntoConstraints="NO" id="MHv-uj-dng">
+                                <rect key="frame" x="25" y="70" width="325" height="116"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -71,15 +74,19 @@
                             <constraint firstItem="d5h-ge-DOp" firstAttribute="top" secondItem="5aj-MY-Rjk" secondAttribute="bottom" constant="24" id="9Ll-oG-gHi"/>
                             <constraint firstItem="5aj-MY-Rjk" firstAttribute="top" secondItem="tpV-0m-6TB" secondAttribute="bottom" constant="8" id="BCN-c4-1P7"/>
                             <constraint firstItem="UEf-d9-ovj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="EHA-1t-x49"/>
+                            <constraint firstItem="UEf-d9-ovj" firstAttribute="top" secondItem="MHv-uj-dng" secondAttribute="bottom" constant="27" id="F6X-Lj-uuB"/>
                             <constraint firstItem="UEf-d9-ovj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="193" id="M9o-u0-fZk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5aj-MY-Rjk" secondAttribute="trailing" constant="16" id="OA8-ij-ge1"/>
+                            <constraint firstItem="MHv-uj-dng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Y0n-i4-GYK"/>
                             <constraint firstItem="tpV-0m-6TB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZNJ-bd-URV"/>
+                            <constraint firstItem="MHv-uj-dng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="acG-nL-Hqz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UEf-d9-ovj" secondAttribute="trailing" constant="280" id="aoz-a7-IJh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yln-lX-N5q" secondAttribute="trailing" constant="16" id="ccE-gg-Smi"/>
                             <constraint firstItem="ziu-Fe-K8R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="hBN-CW-xIS"/>
                             <constraint firstItem="d5h-ge-DOp" firstAttribute="leading" secondItem="ziu-Fe-K8R" secondAttribute="trailing" constant="177" id="iZS-TW-e1L"/>
                             <constraint firstItem="tpV-0m-6TB" firstAttribute="top" secondItem="yln-lX-N5q" secondAttribute="bottom" constant="16" id="kEr-wP-7q9"/>
                             <constraint firstItem="yln-lX-N5q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tfP-ID-biT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHv-uj-dng" secondAttribute="trailing" constant="25" id="v7Q-E9-Me4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tpV-0m-6TB" secondAttribute="trailing" constant="280" id="wTh-b1-qTL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d5h-ge-DOp" secondAttribute="trailing" constant="53" id="woE-UE-LUL"/>
                         </constraints>
@@ -130,4 +137,7 @@
             <point key="canvasLocation" x="1192.8" y="128.18590704647679"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_force" width="448" height="161"/>
+    </resources>
 </document>

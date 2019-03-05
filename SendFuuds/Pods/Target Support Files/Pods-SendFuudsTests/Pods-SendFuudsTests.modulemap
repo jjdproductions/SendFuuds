@@ -1,0 +1,6 @@
+framework module Pods_SendFuudsTests {
+  umbrella header "Pods-SendFuudsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

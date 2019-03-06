@@ -20,12 +20,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
+        let user = username.text!
+        let pass = password.text!
         
+        PFUser.logInWithUsername(inBackground: user, password: pass) { (user, error) in
+            if user != nil {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
     
     @IBAction func onSignup(_ sender: Any) {
-        var user = PFUser()
+        let user = PFUser()
+        user.username = username.text
+        user.password = password.text
+        
+        user.signUpInBackground { (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        username.text = ""
+        password.text = ""
+    }
+    
     /*
     // MARK: - Navigation
 

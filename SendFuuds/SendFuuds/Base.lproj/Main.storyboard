@@ -95,7 +95,7 @@
                     <connections>
                         <outlet property="password" destination="5aj-MY-Rjk" id="JkM-Vo-BqN"/>
                         <outlet property="username" destination="yln-lX-N5q" id="vUL-eN-VdZ"/>
-                        <segue destination="Ysl-bw-vYs" kind="presentation" id="hv8-xR-Seb"/>
+                        <segue destination="Ysl-bw-vYs" kind="presentation" identifier="loginSegue" id="hv8-xR-Seb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -112,7 +112,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="naT-py-Oc2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aSr-Mn-h3h"/>
+                    <navigationItem key="navigationItem" id="aSr-Mn-h3h">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="bS9-Wd-uMR">
+                            <connections>
+                                <action selector="onLogout:" destination="rPG-dW-OCK" id="uWj-Bb-4B8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syR-V6-hAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

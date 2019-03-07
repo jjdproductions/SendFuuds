@@ -16,6 +16,8 @@
 		31964254222E517200C10973 /* SendFuudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31964253222E517200C10973 /* SendFuudsUITests.swift */; };
 		854BE7EE222E5E8B00C50107 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7ED222E5E8B00C50107 /* LoginViewController.swift */; };
 		854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7EF222E5F1700C50107 /* HomeViewController.swift */; };
+		85B74F282230856C001DF5CA /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74F272230856C001DF5CA /* FoodCell.swift */; };
+		85B74F2A22309213001DF5CA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74F2922309213001DF5CA /* PostViewController.swift */; };
 		B2CAC4369A9530C2CA0E458B /* Pods_SendFuudsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339C64D47BEDC62ED5CFECBF /* Pods_SendFuudsUITests.framework */; };
 		C9DAF03D461AF9B5F2B47E6C /* Pods_SendFuuds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEF15771235EBA92FCDFF63 /* Pods_SendFuuds.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		8199560DBA9BD1A22675816F /* Pods-SendFuuds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendFuuds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SendFuuds/Pods-SendFuuds.debug.xcconfig"; sourceTree = "<group>"; };
 		854BE7ED222E5E8B00C50107 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		854BE7EF222E5F1700C50107 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		85B74F272230856C001DF5CA /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		85B74F2922309213001DF5CA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		9EB063BA2EF55231DAB76BAD /* Pods-SendFuudsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendFuudsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SendFuudsUITests/Pods-SendFuudsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A960B9B68969F5A9F6E9F631 /* Pods-SendFuudsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendFuudsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SendFuudsTests/Pods-SendFuudsTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5BC6571DC9825F081AB2537 /* Pods-SendFuudsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendFuudsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SendFuudsTests/Pods-SendFuudsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				3196423C222E517100C10973 /* LaunchScreen.storyboard */,
 				3196423F222E517100C10973 /* Info.plist */,
 				854BE7EF222E5F1700C50107 /* HomeViewController.swift */,
+				85B74F272230856C001DF5CA /* FoodCell.swift */,
+				85B74F2922309213001DF5CA /* PostViewController.swift */,
 			);
 			path = SendFuuds;
 			sourceTree = "<group>";
@@ -403,8 +409,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				854BE7EE222E5E8B00C50107 /* LoginViewController.swift in Sources */,
+				85B74F282230856C001DF5CA /* FoodCell.swift in Sources */,
 				31964234222E517000C10973 /* AppDelegate.swift in Sources */,
 				854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */,
+				85B74F2A22309213001DF5CA /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

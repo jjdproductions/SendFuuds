@@ -14,6 +14,8 @@
 		3196423E222E517100C10973 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3196423C222E517100C10973 /* LaunchScreen.storyboard */; };
 		31964249222E517200C10973 /* SendFuudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31964248222E517200C10973 /* SendFuudsTests.swift */; };
 		31964254222E517200C10973 /* SendFuudsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31964253222E517200C10973 /* SendFuudsUITests.swift */; };
+		854042132231C817004C1142 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854042122231C817004C1142 /* SearchViewController.swift */; };
+		854042152231C9C5004C1142 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854042142231C9C5004C1142 /* RequestViewController.swift */; };
 		854BE7EE222E5E8B00C50107 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7ED222E5E8B00C50107 /* LoginViewController.swift */; };
 		854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7EF222E5F1700C50107 /* HomeViewController.swift */; };
 		85B74F282230856C001DF5CA /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74F272230856C001DF5CA /* FoodCell.swift */; };
@@ -57,6 +59,8 @@
 		339C64D47BEDC62ED5CFECBF /* Pods_SendFuudsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendFuudsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB4A415D6E427A161D56352 /* Pods_SendFuudsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendFuudsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8199560DBA9BD1A22675816F /* Pods-SendFuuds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendFuuds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SendFuuds/Pods-SendFuuds.debug.xcconfig"; sourceTree = "<group>"; };
+		854042122231C817004C1142 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		854042142231C9C5004C1142 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		854BE7ED222E5E8B00C50107 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		854BE7EF222E5F1700C50107 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		85B74F272230856C001DF5CA /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
@@ -120,15 +124,12 @@
 		31964232222E517000C10973 /* SendFuuds */ = {
 			isa = PBXGroup;
 			children = (
-				854BE7ED222E5E8B00C50107 /* LoginViewController.swift */,
+				854042172231CAA8004C1142 /* Storyboards */,
+				854042162231CA6E004C1142 /* View Controllers */,
 				31964233222E517000C10973 /* AppDelegate.swift */,
-				31964237222E517000C10973 /* Main.storyboard */,
 				3196423A222E517100C10973 /* Assets.xcassets */,
-				3196423C222E517100C10973 /* LaunchScreen.storyboard */,
 				3196423F222E517100C10973 /* Info.plist */,
-				854BE7EF222E5F1700C50107 /* HomeViewController.swift */,
 				85B74F272230856C001DF5CA /* FoodCell.swift */,
-				85B74F2922309213001DF5CA /* PostViewController.swift */,
 			);
 			path = SendFuuds;
 			sourceTree = "<group>";
@@ -149,6 +150,27 @@
 				31964255222E517200C10973 /* Info.plist */,
 			);
 			path = SendFuudsUITests;
+			sourceTree = "<group>";
+		};
+		854042162231CA6E004C1142 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				854BE7ED222E5E8B00C50107 /* LoginViewController.swift */,
+				854BE7EF222E5F1700C50107 /* HomeViewController.swift */,
+				85B74F2922309213001DF5CA /* PostViewController.swift */,
+				854042122231C817004C1142 /* SearchViewController.swift */,
+				854042142231C9C5004C1142 /* RequestViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		854042172231CAA8004C1142 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3196423C222E517100C10973 /* LaunchScreen.storyboard */,
+				31964237222E517000C10973 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		B99E2877220B97C4E695966E /* Pods */ = {
@@ -408,7 +430,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854042132231C817004C1142 /* SearchViewController.swift in Sources */,
 				854BE7EE222E5E8B00C50107 /* LoginViewController.swift in Sources */,
+				854042152231C9C5004C1142 /* RequestViewController.swift in Sources */,
 				85B74F282230856C001DF5CA /* FoodCell.swift in Sources */,
 				31964234222E517000C10973 /* AppDelegate.swift in Sources */,
 				854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */,

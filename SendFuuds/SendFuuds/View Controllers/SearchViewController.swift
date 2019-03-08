@@ -14,8 +14,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var all_users = [PFUser]()
-    var query = PFQuery(className: "User")
+    var all_users = [PFObject]()
+    
     
     var users = [String]()
     
@@ -32,17 +32,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func loadData() {
-        
-        query.findObjectsInBackground{ (objects, error) -> Void in
-            if error == nil {
-                if let objects = objects
-                {
-                    for object in objects
-                    {
-                        self.users.append(object.object(forKey: "username") as! String)
-                    }
-                }
+        let query = PFUser.query()
+        do{
+            let queryObjects = try query!.findObjects()
+            self.all_users = queryObjects
+            for object in queryObjects {
+                self.users.append(object["username"] as! String)
             }
+        } catch {
+            print("error")
         }
     }
     
@@ -61,7 +59,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return all_users.count
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

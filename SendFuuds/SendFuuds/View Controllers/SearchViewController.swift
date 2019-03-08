@@ -46,12 +46,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    @IBAction func onAdd(_ sender: Any) {
-        var user = PFUser.current()
-        var friends = user?["friends"] as! [String]
-        friends.append()
-    }
-    
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -66,9 +60,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return users.count
     }
     
+    @objc func addFriend(sender:UIButton) {
+        let user = PFUser.current()
+        var friends = user?["friends"] as! [String]
+        let center = sender.center
+        let point = sender.superview!.convert(center, to:self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: point)
+        let cell = self.tableView.cellForRow(at: indexPath!) as! AddFriendCell
+        friends.append(cell.nameLabel.text!)
+        user?["friends"] = friends
+        user!.saveInBackground()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendCell", for: indexPath) as! AddFriendCell
         cell.nameLabel?.text = users[indexPath.row]
+        cell.addButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
         return cell
     }
     

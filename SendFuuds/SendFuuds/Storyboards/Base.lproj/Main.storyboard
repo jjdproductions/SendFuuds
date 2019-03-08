@@ -351,9 +351,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-iZ-HSb">
                                                     <rect key="frame" x="269" y="8" width="75" height="30"/>
                                                     <state key="normal" title="Add Friend"/>
-                                                    <connections>
-                                                        <action selector="onAdd:" destination="E0T-Nf-VSN" eventType="touchUpInside" id="GKc-SZ-SlW"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -365,6 +362,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addButton" destination="2Ck-iZ-HSb" id="8bH-K9-1fn"/>
                                             <outlet property="nameLabel" destination="RCz-Re-GaF" id="lRf-cf-4ck"/>
                                         </connections>
                                     </tableViewCell>

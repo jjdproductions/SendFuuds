@@ -14,9 +14,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var all_users = [PFObject]()
-    
-    
+    var all_users = [String]()
     var users = [String]()
     
     override func viewDidLoad() {
@@ -35,9 +33,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let query = PFUser.query()
         do{
             let queryObjects = try query!.findObjects()
-            self.all_users = queryObjects
             for object in queryObjects {
-                self.users.append(object["username"] as! String)
+                // get all users except for the current user, since users shouldn't be able to find themselves
+                if object["username"] as! String != PFUser.current()?["username"] as! String
+                {
+                    self.all_users.append(object["username"] as! String)
+                    self.users.append(object["username"] as! String)
+                }
             }
         } catch {
             print("error")
@@ -45,7 +47,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func onAdd(_ sender: Any) {
-        
+        var user = PFUser.current()
+        var friends = user?["friends"] as! [String]
+        friends.append()
     }
     
     @IBAction func onLogout(_ sender: Any) {
@@ -69,7 +73,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        users = searchText.isEmpty ? users : users.filter({(dataString: String) -> Bool in
+        users = searchText.isEmpty ? all_users : all_users.filter({(dataString: String) -> Bool in
             return dataString.range(of: searchText, options: .caseInsensitive) != nil
         })
         

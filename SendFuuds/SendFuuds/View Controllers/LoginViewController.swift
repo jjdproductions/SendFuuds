@@ -36,7 +36,17 @@ class LoginViewController: UIViewController {
         let user = PFUser()
         user.username = username.text
         user.password = password.text
-        user["friends"] = [String]()
+        //user["friends"] = [String]()
+        let userInfo = PFObject(className: "userInfo")
+        
+        userInfo["username"] = username.text!
+        userInfo["friends"] = [String]()
+        
+        userInfo.saveInBackground {
+            (success, error) in
+            if success {
+            }
+        }
         
         user.signUpInBackground { (success, error) in
             if success {

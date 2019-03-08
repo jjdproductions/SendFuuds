@@ -23,12 +23,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         searchBar.delegate = self
         self.loadData()
-        print(users)
-        let user = PFUser.current()
-        var friends = user?["friends"] as! [String]
-        print(friends)
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -65,28 +59,38 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     @objc func addFriend(sender:UIButton) {
         let user = PFUser.current()
-        var friends = user?["friends"] as! [String]
+        let query = PFQuery(className: "userInfo")
+        query.whereKey("username", equalTo: user!.username!)
+        var userObject = PFObject(className: "userInfo")
+        do{
+            let userObjects = try query.findObjects()
+            for u in userObjects {
+                userObject = u
+            }
+        } catch {
+            print("error")
+        }
+        
+        var friends = userObject["friends"] as! [String]
         let center = sender.center
         let point = sender.superview!.convert(center, to:self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: point)
         let cell = self.tableView.cellForRow(at: indexPath!) as! AddFriendCell
-        let name = cell.nameLabel.text
-        if friends.contains(name!) == false {
-            friends.append(name!)
+        let friendName = cell.nameLabel.text
+        if friends.contains(friendName!) == false {
+            friends.append(friendName!)
         }
-        user?["friends"] = friends
-        print(friends)
-        user!.saveInBackground()
+        userObject["friends"] = friends
+        userObject.saveInBackground()
         
-        let find = PFUser.query()
-        let query = find!.whereKey("username", equalTo:name!)
-        query.findObjectsInBackground(block: { (object, error) in
+        let find = PFQuery(className: "userInfo")
+        let findFriend = find.whereKey("username", equalTo: friendName!)
+        findFriend.findObjectsInBackground(block: { (object, error) in
             for friend in object! {
                 var newFriends = friend["friends"] as! [String]
                 newFriends.append(user!.username!)
                 friend["friends"] = newFriends
                 friend.saveInBackground()
-                
             }
         })
         

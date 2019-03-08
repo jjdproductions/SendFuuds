@@ -24,6 +24,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
         self.loadData()
         print(users)
+        let user = PFUser.current()
+        var friends = user?["friends"] as! [String]
+        print(friends)
         
         
         // Do any additional setup after loading the view.
@@ -67,9 +70,26 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let point = sender.superview!.convert(center, to:self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: point)
         let cell = self.tableView.cellForRow(at: indexPath!) as! AddFriendCell
-        friends.append(cell.nameLabel.text!)
+        let name = cell.nameLabel.text
+        if friends.contains(name!) == false {
+            friends.append(name!)
+        }
         user?["friends"] = friends
+        print(friends)
         user!.saveInBackground()
+        
+        let find = PFUser.query()
+        let query = find!.whereKey("username", equalTo:name!)
+        query.findObjectsInBackground(block: { (object, error) in
+            for friend in object! {
+                var newFriends = friend["friends"] as! [String]
+                newFriends.append(user!.username!)
+                friend["friends"] = newFriends
+                friend.saveInBackground()
+                
+            }
+        })
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

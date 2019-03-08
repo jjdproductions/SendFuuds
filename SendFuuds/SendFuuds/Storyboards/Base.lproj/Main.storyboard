@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="-1473"/>
+            <point key="canvasLocation" x="2102" y="-1433"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KU6-bS-LW0">
@@ -120,7 +120,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9V-Cs-1iH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="-684"/>
+            <point key="canvasLocation" x="2102" y="-672"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="bx6-lT-tON">
@@ -326,7 +326,61 @@
                     <view key="view" contentMode="scaleToFill" id="q2d-qe-cYX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vAw-p9-Kmu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DYy-Nq-zri">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddFriendCell" rowHeight="55" id="LpS-Ds-ID6" customClass="AddFriendCell" customModule="SendFuuds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LpS-Ds-ID6" id="qJz-1R-Qwp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCz-Re-GaF">
+                                                    <rect key="frame" x="16" y="8" width="48" height="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-iZ-HSb">
+                                                    <rect key="frame" x="269" y="8" width="75" height="30"/>
+                                                    <state key="normal" title="Add Friend"/>
+                                                    <connections>
+                                                        <action selector="onAdd:" destination="E0T-Nf-VSN" eventType="touchUpInside" id="GKc-SZ-SlW"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RCz-Re-GaF" firstAttribute="top" secondItem="qJz-1R-Qwp" secondAttribute="top" constant="8" id="BZN-yQ-20v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Ck-iZ-HSb" secondAttribute="trailing" constant="16" id="JTs-32-VEk"/>
+                                                <constraint firstItem="2Ck-iZ-HSb" firstAttribute="top" secondItem="qJz-1R-Qwp" secondAttribute="top" constant="8" id="QWF-he-WJQ"/>
+                                                <constraint firstItem="RCz-Re-GaF" firstAttribute="leading" secondItem="qJz-1R-Qwp" secondAttribute="leading" constant="16" id="sbf-7d-Dds"/>
+                                                <constraint firstItem="2Ck-iZ-HSb" firstAttribute="height" secondItem="RCz-Re-GaF" secondAttribute="height" id="vBq-Qd-Qjo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="RCz-Re-GaF" id="lRf-cf-4ck"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DYy-Nq-zri" firstAttribute="leading" secondItem="q2d-qe-cYX" secondAttribute="leading" id="2F9-Fn-IvH"/>
+                            <constraint firstItem="mCq-AM-aFA" firstAttribute="trailing" secondItem="DYy-Nq-zri" secondAttribute="trailing" id="43m-go-gvm"/>
+                            <constraint firstItem="DYy-Nq-zri" firstAttribute="top" secondItem="vAw-p9-Kmu" secondAttribute="bottom" id="IqF-ji-ibT"/>
+                            <constraint firstItem="vAw-p9-Kmu" firstAttribute="trailing" secondItem="mCq-AM-aFA" secondAttribute="trailing" id="KxE-N6-wWo"/>
+                            <constraint firstItem="mCq-AM-aFA" firstAttribute="bottom" secondItem="DYy-Nq-zri" secondAttribute="bottom" id="OVv-oA-vcE"/>
+                            <constraint firstItem="vAw-p9-Kmu" firstAttribute="top" secondItem="mCq-AM-aFA" secondAttribute="top" id="e4j-Gw-ozl"/>
+                            <constraint firstItem="vAw-p9-Kmu" firstAttribute="leading" secondItem="mCq-AM-aFA" secondAttribute="leading" id="vOZ-Mc-LCL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mCq-AM-aFA"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jjx-MS-gP5">
@@ -336,10 +390,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="vAw-p9-Kmu" id="Ls6-3i-iJc"/>
+                        <outlet property="tableView" destination="DYy-Nq-zri" id="b47-B3-7p6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgj-Xa-tPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="1134"/>
+            <point key="canvasLocation" x="1760.8" y="1133.8830584707648"/>
         </scene>
         <!--Post-->
         <scene sceneID="bcB-Zr-mUj">

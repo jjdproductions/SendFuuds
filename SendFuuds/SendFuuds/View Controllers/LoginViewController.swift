@@ -20,14 +20,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
-        let user = username.text!
-        let pass = password.text!
+        let username = self.username.text!
+        let password = self.password.text!
         
-        PFUser.logInWithUsername(inBackground: user, password: pass) { (user, error) in
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+            else {
+                // Alert user that they inputted an incorrect username or password:
+                let alert = UIAlertController(title: "Incorrect Username or Password",
+                                              message: "Please Try Again",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true)
             }
         }
     }
@@ -50,8 +56,13 @@ class LoginViewController: UIViewController {
         user.signUpInBackground { (success, error) in
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+            else {
+                let alert = UIAlertController(title: "Error occured when signing up",
+                                              message: "Please make sure you are signing up with a unique username and password",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true)
             }
         }
     }

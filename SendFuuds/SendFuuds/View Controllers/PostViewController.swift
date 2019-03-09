@@ -15,11 +15,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var descField: UITextField!
     
+    let picker = UIImagePickerController()
+    
     var placeholder: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         placeholder = self.foodImageView.image
+        picker.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -50,20 +53,40 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    
     @IBAction func onImageTap(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
+
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { _ in
+            self.openPhotoGallary()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)) {
             picker.sourceType = .camera
-            
-        } else {
-            picker.sourceType = .photoLibrary
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
         }
-        
-        present(picker, animated: true, completion: nil)
+            
+        else {
+            let alert  = UIAlertController(title: "ERROR", message: "No Camera Available", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openPhotoGallary() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        self.present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

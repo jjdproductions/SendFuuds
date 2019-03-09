@@ -41,6 +41,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.dateField.text = ""
                 self.descField.text = ""
                 self.foodImageView.image = self.placeholder
+                //tab bar is like an array 
                 self.tabBarController?.selectedIndex = 0
             }
             else {

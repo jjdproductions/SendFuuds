@@ -58,9 +58,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @objc func addFriend(sender:UIButton) {
+        //creating a varaible for current PFUser
         let user = PFUser.current()
+        //Grabing the userInfo table
         let query = PFQuery(className: "userInfo")
+        //Grabbing the tuple where the user is equal to the current user
         query.whereKey("username", equalTo: user!.username!)
+        //Grabbing the userInfor table
         var userObject = PFObject(className: "userInfo")
         do{
             let userObjects = try query.findObjects()
@@ -70,21 +74,28 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         } catch {
             print("error")
         }
-        
+        //accessing friend's col
         var friends = userObject["friends"] as! [String]
+        //StackOverFlow
         let center = sender.center
         let point = sender.superview!.convert(center, to:self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: point)
         let cell = self.tableView.cellForRow(at: indexPath!) as! AddFriendCell
+        //
         let friendName = cell.nameLabel.text
+        //if the frend is not in the Array of User's Friends then you can add
+        //to the table
         if friends.contains(friendName!) == false {
             friends.append(friendName!)
         }
+        //updating the database
         userObject["friends"] = friends
         userObject.saveInBackground()
         
+        //
         let find = PFQuery(className: "userInfo")
         let findFriend = find.whereKey("username", equalTo: friendName!)
+        //finding user info object of the friend
         findFriend.findObjectsInBackground(block: { (object, error) in
             for friend in object! {
                 var newFriends = friend["friends"] as! [String]

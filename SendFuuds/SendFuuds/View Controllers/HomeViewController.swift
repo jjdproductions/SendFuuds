@@ -39,12 +39,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } catch {
             print("error")
         }
+        //this is an array that contains all the current user's friends and the current user
         var friends = userObject["friends"] as! [String]
         friends.append(user!.username!)
-        print(friends)
         
         let query = PFQuery(className: "Foods")
         query.includeKeys(["owner", "description"])
+        //finding the all the keys that are contained in the Array Friends
         query.whereKey("owner", containedIn: friends)
         query.limit = 20
         

@@ -47,6 +47,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         query.includeKeys(["owner", "description"])
         //finding the all the keys that are contained in the Array Friends
         query.whereKey("owner", containedIn: friends)
+        //display newer posts on top
+        query.order(byDescending: "createdAt")
         query.limit = 20
         
         query.findObjectsInBackground { (foods, error) in

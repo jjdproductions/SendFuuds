@@ -107,12 +107,40 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         })
         
+        // update button text when user presses add button
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendCell", for: indexPath) as! AddFriendCell
         cell.nameLabel?.text = users[indexPath.row]
-        cell.addButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
+        let user = PFUser.current()
+        let currentUser = PFQuery(className: "userInfo")
+        currentUser.whereKey("username", equalTo: user!.username!)
+        var userObject = PFObject(className: "userInfo")
+        do{
+            let userObjects = try currentUser.findObjects()
+            for u in userObjects {
+                userObject = u
+            }
+        } catch {
+            print("error")
+        }
+        //this is an array that contains all the current user's friends and the current user
+        let friends = userObject["friends"] as! [String]
+        if friends.contains(users[indexPath.row])
+        {
+            //disable button if already friends
+            cell.addButton.setTitle("Already friends", for: .normal)
+            cell.addButton.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            cell.addButton.isUserInteractionEnabled = false
+            
+        }
+        else
+        {
+            //enable button to add friends
+            cell.addButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
+        }
         return cell
     }
     

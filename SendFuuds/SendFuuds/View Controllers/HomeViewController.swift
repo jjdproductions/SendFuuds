@@ -27,8 +27,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+        let user = PFUser.current()
+        let currentUser = PFQuery(className: "userInfo")
+        currentUser.whereKey("username", equalTo: user!.username!)
+        var userObject = PFObject(className: "userInfo")
+        do{
+            let userObjects = try currentUser.findObjects()
+            for u in userObjects {
+                userObject = u
+            }
+        } catch {
+            print("error")
+        }
+        var friends = userObject["friends"] as! [String]
+        friends.append(user!.username!)
+        print(friends)
+        
         let query = PFQuery(className: "Foods")
         query.includeKeys(["owner", "description"])
+        query.whereKey("owner", containedIn: friends)
         query.limit = 20
         
         query.findObjectsInBackground { (foods, error) in
@@ -57,8 +74,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
         let food = foods[indexPath.row]
         
-        let user = food["owner"] as! PFUser
-        cell.ownerLabel.text = user.username
+        cell.ownerLabel.text = food["owner"] as? String
         
         cell.descLabel.text = food["description"] as? String
         

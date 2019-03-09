@@ -28,7 +28,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         food["date"] = dateField.text!
         food["description"] = descField.text!
-        food["owner"] = PFUser.current()!
+        food["owner"] = PFUser.current()!.username!
         
         let imageData = foodImageView.image!.pngData()
         let file = PFFileObject(data: imageData!)
@@ -41,6 +41,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.dateField.text = ""
                 self.descField.text = ""
                 self.foodImageView.image = self.placeholder
+                self.tabBarController?.selectedIndex = 0
             }
             else {
                 print("error")

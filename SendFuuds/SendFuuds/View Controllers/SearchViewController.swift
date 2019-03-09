@@ -88,9 +88,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         findFriend.findObjectsInBackground(block: { (object, error) in
             for friend in object! {
                 var newFriends = friend["friends"] as! [String]
-                newFriends.append(user!.username!)
-                friend["friends"] = newFriends
-                friend.saveInBackground()
+                if newFriends.contains(user!.username!) == false {
+                    newFriends.append(user!.username!)
+                    friend["friends"] = newFriends
+                    friend.saveInBackground()
+                }
             }
         })
         

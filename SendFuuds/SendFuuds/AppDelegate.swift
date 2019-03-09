@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window?.rootViewController = tabNagivationController
         }
-        
+        //Thread.sleep(forTimeInterval: 3.0)
         return true
     }
 

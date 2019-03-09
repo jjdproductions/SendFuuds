@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 import Parse
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var descField: UITextField!
@@ -23,7 +23,21 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         placeholder = self.foodImageView.image
         picker.delegate = self
+        dateField.delegate = self
+        dateField.returnKeyType = .done
+        descField.delegate = self
+        descField.returnKeyType = .done
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
     }
     
     @IBAction func onPost(_ sender: Any) {

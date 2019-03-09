@@ -177,6 +177,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fd6-Zg-MjE" firstAttribute="top" secondItem="C2y-gH-RzC" secondAttribute="bottom" constant="8" id="7Gg-6h-gBk"/>
                             <constraint firstItem="fd6-Zg-MjE" firstAttribute="leading" secondItem="7gw-fp-c2n" secondAttribute="trailing" constant="8" id="9Oz-KA-LW0"/>
@@ -196,6 +197,9 @@
                             <constraint firstItem="vhf-DA-fWe" firstAttribute="leading" secondItem="3ni-NH-cPr" secondAttribute="leading" constant="20" id="ykf-H5-psy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3ni-NH-cPr"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oDZ-wn-F8T" appends="YES" id="4N8-4r-OSE"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="mCv-0j-WoP">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="qem-FU-aI2">
@@ -214,6 +218,11 @@
                 <tapGestureRecognizer id="LPy-dn-inJ">
                     <connections>
                         <action selector="onImageTap:" destination="vSZ-MR-IMN" id="ohA-o7-Wjq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oDZ-wn-F8T">
+                    <connections>
+                        <action selector="onTap:" destination="vSZ-MR-IMN" id="Nh4-WK-2v1"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

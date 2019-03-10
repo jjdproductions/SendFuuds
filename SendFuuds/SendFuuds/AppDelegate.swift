@@ -8,15 +8,18 @@
 
 import UIKit
 import Parse
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
         
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
@@ -32,8 +35,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //tabController.selectedIndex = 3
             window?.rootViewController = tabController
         }
-        //Thread.sleep(forTimeInterval: 3.0)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("granted: (\(granted)")
+        }
+        UNUserNotificationCenter.current().delegate = self
+        
+        Thread.sleep(forTimeInterval: 1.0)
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.notification.request.identifier == "TestIdentifier" {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let tabController = main.instantiateViewController(withIdentifier: "TabNagivationController") as! UITabBarController
+            
+            tabController.selectedIndex = 4
+            window?.rootViewController = tabController
+        }
+        
+        completionHandler()
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

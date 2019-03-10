@@ -27,6 +27,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         descField.delegate = self
         descField.returnKeyType = .done
         // Do any additional setup after loading the view.
+        
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -50,23 +52,19 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let notifyDay = Calendar.current.date(byAdding: dateComponent, to:datePicker.date)
         
-        let components = Calendar.current.dateComponents([.weekday, .hour, .minute], from: notifyDay!)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         
+        if notifyDay! > Date() {
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: 259200, repeats: false)
+        }
         
         let content = UNMutableNotificationContent()
-        content.title = "Notification Demo"
-        content.subtitle = "Demo"
-        content.body = "Notification on specific date!!"
+        content.title = "Food about to expire!!"
+        content.body = descField.text! + " is about to expire!!!"
+        content.sound = UNNotificationSound.default
         
-        let request = UNNotificationRequest(
-            identifier: "identifier",
-            content: content,
-            trigger: trigger
-        )
-        
-        let center = UNUserNotificationCenter.current()
-        center.add(request)
+        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         food["notifyDay"] = notifyDay
         food["description"] = descField.text!
@@ -90,6 +88,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 print("error")
             }
         }
+        
     }
     
     @IBAction func onImageTap(_ sender: Any) {

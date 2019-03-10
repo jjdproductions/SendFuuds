@@ -42,21 +42,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziu-Fe-K8R">
-                                <rect key="frame" x="50" y="371" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziu-Fe-K8R">
+                                <rect key="frame" x="50" y="371" width="59" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVr-od-wJp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5h-ge-DOp">
-                                <rect key="frame" x="271" y="371" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5h-ge-DOp">
+                                <rect key="frame" x="251" y="371" width="74" height="30"/>
                                 <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUR-Jb-WCd"/>
@@ -108,7 +109,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2102" y="-1433"/>
+            <point key="canvasLocation" x="2437.5999999999999" y="-1461.3193403298351"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KU6-bS-LW0">
@@ -129,7 +130,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9V-Cs-1iH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="-672"/>
+            <point key="canvasLocation" x="2438" y="-648"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="bx6-lT-tON">
@@ -139,7 +140,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="b8I-ny-Xu5" userLabel="FoodImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="b8I-ny-Xu5" userLabel="FoodImageView">
                                 <rect key="frame" x="20" y="72" width="335" height="260"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -188,8 +189,11 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz8-JQ-mmo">
-                                <rect key="frame" x="20" y="523" width="335" height="30"/>
-                                <state key="normal" title="Post"/>
+                                <rect key="frame" x="20" y="523" width="335" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="onPost:" destination="vSZ-MR-IMN" eventType="touchUpInside" id="voO-Di-fZR"/>
                                 </connections>
@@ -222,6 +226,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mCv-0j-WoP">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="qem-FU-aI2">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="vSZ-MR-IMN" id="Vyy-WC-anG"/>
                             </connections>
@@ -318,6 +323,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aSr-Mn-h3h">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="bS9-Wd-uMR">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="rPG-dW-OCK" id="uWj-Bb-4B8"/>
                             </connections>
@@ -382,7 +388,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-iZ-HSb">
                                                     <rect key="frame" x="269" y="8" width="75" height="30"/>
-                                                    <state key="normal" title="Add Friend"/>
+                                                    <state key="normal" title="Add Friend">
+                                                        <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -419,6 +427,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jjx-MS-gP5">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="UEJ-eM-erv">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="E0T-Nf-VSN" id="7PC-G7-zBA"/>
                             </connections>
@@ -469,6 +478,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="P1Q-uw-bzp">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="zj7-we-gPA">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="LpU-Wg-gJr" id="H4F-uS-i9X"/>
                             </connections>
@@ -560,6 +570,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iAz-FT-3Mi">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Vij-wr-VIC">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="1eI-Xx-ORG" id="FSY-kV-PCN"/>
                             </connections>
@@ -599,6 +610,6 @@
         <image name="home" width="30" height="30"/>
         <image name="login_force" width="448" height="161"/>
         <image name="paper_plane" width="30" height="30"/>
-        <image name="placeholder" width="375" height="375"/>
+        <image name="photo-camera" width="384" height="384"/>
     </resources>
 </document>

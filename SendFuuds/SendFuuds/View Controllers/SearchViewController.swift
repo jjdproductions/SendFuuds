@@ -43,6 +43,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)

@@ -9,14 +9,27 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        username.delegate = self
+        username.returnKeyType = .done
+        password.delegate = self
+        password.returnKeyType = .done
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
     }
     
     @IBAction func onLogin(_ sender: Any) {

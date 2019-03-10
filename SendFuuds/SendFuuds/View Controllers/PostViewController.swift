@@ -12,8 +12,8 @@ import Parse
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var foodImageView: UIImageView!
-    @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var descField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     let picker = UIImagePickerController()
     
@@ -23,8 +23,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         placeholder = self.foodImageView.image
         picker.delegate = self
-        dateField.delegate = self
-        dateField.returnKeyType = .done
         descField.delegate = self
         descField.returnKeyType = .done
         // Do any additional setup after loading the view.
@@ -43,7 +41,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func onPost(_ sender: Any) {
         let food = PFObject(className: "Foods")
         
-        food["date"] = dateField.text!
+        food["date"] = datePicker.date
         food["description"] = descField.text!
         food["owner"] = PFUser.current()!.username!
         
@@ -55,7 +53,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         food.saveInBackground {
             (success, error) in
             if success {
-                self.dateField.text = ""
+                //self.dateField.text = ""
                 self.descField.text = ""
                 self.foodImageView.image = self.placeholder
                 //tab bar is like an array 

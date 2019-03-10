@@ -9,14 +9,14 @@
 import UIKit
 import Parse
 
-class NotificationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class NotificationViewController: UIViewController/*, UITableViewDataSource, UITableViewDelegate*/ {
     
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        //tableView.dataSource = self
+        //tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -30,13 +30,13 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         delegate.window?.rootViewController = loginViewController
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
-    }
+    }*/
     
     /*
     // MARK: - Navigation

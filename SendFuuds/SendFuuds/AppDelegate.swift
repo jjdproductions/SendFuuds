@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if PFUser.current() != nil {
             let main = UIStoryboard(name: "Main", bundle: nil)
-            let tabNagivationController = main.instantiateViewController(withIdentifier: "TabNagivationController")
+            let tabController = main.instantiateViewController(withIdentifier: "TabNagivationController") as! UITabBarController
             
-            window?.rootViewController = tabNagivationController
+            //tabController.selectedIndex = 3
+            window?.rootViewController = tabController
         }
         //Thread.sleep(forTimeInterval: 3.0)
         return true

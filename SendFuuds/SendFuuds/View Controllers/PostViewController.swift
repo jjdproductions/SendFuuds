@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import Parse
+import UserNotifications
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var foodImageView: UIImageView!
@@ -48,6 +49,24 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dateComponent.day = notifyInDays
         
         let notifyDay = Calendar.current.date(byAdding: dateComponent, to:datePicker.date)
+        
+        let components = Calendar.current.dateComponents([.weekday, .hour, .minute], from: notifyDay!)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Notification Demo"
+        content.subtitle = "Demo"
+        content.body = "Notification on specific date!!"
+        
+        let request = UNNotificationRequest(
+            identifier: "identifier",
+            content: content,
+            trigger: trigger
+        )
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request)
         
         food["notifyDay"] = notifyDay
         food["description"] = descField.text!

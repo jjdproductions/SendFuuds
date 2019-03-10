@@ -42,6 +42,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let food = PFObject(className: "Foods")
         
         food["date"] = datePicker.date
+        
+        let notifyInDays = -3
+        var dateComponent = DateComponents()
+        dateComponent.day = notifyInDays
+        
+        let notifyDay = Calendar.current.date(byAdding: dateComponent, to:datePicker.date)
+        
+        food["notifyDay"] = notifyDay
         food["description"] = descField.text!
         food["owner"] = PFUser.current()!.username!
         

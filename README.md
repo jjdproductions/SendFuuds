@@ -6,6 +6,8 @@
 1. [Wireframes](#Wireframes)
 1. [Schema](#Schema)
 1. [Walkthrough](#Walkthrough)
+1. [App Pitch Presentation](#App-Pitch-Presentation)
+1. [Authors](#Authors)
 
 ## Overview
 
@@ -84,16 +86,32 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
     
 ## Wireframes
 
-**Hand-Drawn: **
+**Hand-Drawn:**
 
 
-**Digital: **
+**Digital:**
 https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
 
 <img src='https://i.imgur.com/ZKQlv1m.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
-## Schema 
+### Schema 
 ### Models
 
     
-## Walkthrough
+### Walkthrough
+
+### App-Pitch-Presentation
+
+**Coming Soon**
+
+### Authors
+
+* **Josh Tavassolikhah** - [JoshTavasso](https://github.com/JoshTavasso)
+
+* **Justin Leong** - [justinleong360](https://github.com/justinleong360)
+
+* **David Yip** - [davidyip50](https://github.com/davidyip50)
+
+## Process of building this application
+
+All authors collaborated together on 1 laptop at a time. Work was always done together and all features were implemented as a team. 

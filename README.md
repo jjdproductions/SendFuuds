@@ -31,18 +31,29 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
 ### User Stories
 
 **Required Must-have Stories**
- * Users must be able to login, sign up, and log out.
- * User must be able to enter the expiration date of their groceries
- * Users must be able to search and add friends.
- * Users must be able to notify friends about getting or sharing their soon-to-expire food.
+- [x] User can log in
+- [x] User can sign up
+- [x] User stays logged in across restarts.
+- [x] User can log out.
+- [x] User must be able to enter the expiration date of their groceries and post it to a home feed.
+- [x] User must be able to search and add friends.
+- [x] User must only see his own posts and his friends' posts on the home feed.
+- [x] User must get notified when their food is about to expire.
+- [ ] Users should be able to remove their own posts.
+- [ ] User must be able to notify friends about getting or sharing their soon-to-expire food.
+- [ ] User should be able to see recent notifications in a page on the application. 
+- [ ] Once a food is expired, Users should no longer be able to see the food on their home feed. 
 
 **Optional Nice-to-have Stories**
- * At the end of each month, show how much food was wasted.
- * Users have a profile page
- * Users can see mutual friends.
- * Users can share on other social media, such as Instagram or Facebook.
- * Users can livestream themselves eating.
- * Users can filter out searches for specific food.
+- [ ] Users can chat with other users.
+- [ ] Users can click the image of a post which would send the poster a notification saying that the user is interested in their food. 
+- [ ] Users can have their own personal feed with their food and once the food is about to expire, the user is asked whether or not they want to share their food with others. 
+- [ ] At the end of each month, show how much food was wasted.
+- [ ] Users have a profile page
+- [ ] Users can see mutual friends.
+- [ ] Users can share on other social media, such as Instagram or Facebook.
+- [ ] Users can livestream themselves eating.
+- [ ] Users can filter out searches for specific food.
 
 ### App Screen Archetypes
 
@@ -67,6 +78,7 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
  * Search User
  * Post a Food
  * Send request
+ * Notification 
 
 **Flow Navigation**
 
@@ -75,14 +87,22 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
  * Stream (Home Screen)
     => Login Screen by clicking the Logout button.
     => Future version might involve navigation to a profile page for a user.
+    => Any other screen by clicking one of them on the tab bar.
+    => Login screen by clicking logout.
  * Creation (Post Screen)
     => Home after a user posts their food.
-    => Home by clicking the Cancel button.
- * Search Screen
-    => Home by clicking the Home button.
+    => Any other screen by clicking one of them on the tab bar.
+    => Login screen by clicking logout.
+ * Search Screen.
+    => Any other screen by clicking one of them on the tab bar.
+    => Login screen by clicking logout.
  * Send Request Screen
     => Home after sending a request.
-    => Home by clicking the Cancel button.
+    => Any other screen by clicking one of them on the tab bar.
+    => Login screen by clicking logout.
+ * Notification Screen
+    => Any other screen by clicking one of them on the tab bar.
+    => Login screen by clicking logout.
     
 ## Wireframes
 

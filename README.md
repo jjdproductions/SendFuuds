@@ -123,10 +123,10 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 ### Schema 
 ### Models
 
-    
+
 ### Walkthrough
 
-## Walkthrough of the following user stories: 
+**Walkthrough of the following stories**
 
 - [x] User can log in
 - [x] User can sign up

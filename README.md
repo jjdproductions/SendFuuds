@@ -139,7 +139,7 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 - [x] User can only see his own posts and his friends' posts on the home feed.
 - [x] User gets notified when their food is about to expire.
 
-<img src='https://i.imgur.com/377bg0R.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='https://i.imgur.com/Cqf6MJJ.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
 
 ### App-Pitch-Presentation
 

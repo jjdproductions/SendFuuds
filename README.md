@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
+1. [Product Specification](#Product-Specification)
 1. [Wireframes](#Wireframes)
 1. [Schema](#Schema)
 1. [Walkthrough](#Walkthrough)
@@ -23,12 +23,12 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 ### App Evaluation
 - **Category:** Social Media/Personal use
 - **Mobile:** This app would be primarily developed for iOS users and will work similar to apps like [Instagram](https://www.instagram.com/?hl=en).
-- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
+- **Story:** User takes a picture of their food and enters the expiration date for it. The app will notify the user if the food is about to expire or if a friend wants their food. 
 - **Market:** Any individual could choose to use this app. We all need to be aware of the food that we waste each day!
 - **Habit:** This app could be used more often by people who cook to ensure that the groceries they buy do not expire. 
 - **Scope:** We will start by having users around UC Irvine use the application, but we expect that this application can be used by people around the world.
 
-## Product Spec
+## Product-Specification
 
 ### User Stories
 
@@ -37,7 +37,7 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [x] User can sign up
 - [x] User stays logged in across restarts.
 - [x] User can log out.
-- [x] User can enter correct login/sign up credentials
+- [x] User must enter correct login/sign up credentials
 - [x] User can enter the expiration date of their groceries and post it to a home feed.
 - [x] User has the option to post an image from their photo gallery or camera. 
 - [x] User can search and add friends.
@@ -89,42 +89,73 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 **Flow Navigation**
 
  * Login Screen
-    => Home after logging in or signing up.
+    * Home after logging in or signing up.
  * Stream (Home Screen)
-    => Login Screen by clicking the Logout button.
-    => Future version might involve navigation to a profile page for a user.
-    => Any other screen by clicking one of them on the tab bar.
-    => Login screen by clicking logout.
+    * Login Screen by clicking the Logout button.
+    * Future version might involve navigation to a profile page for a user.
+    * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
  * Creation (Post Screen)
-    => Home after a user posts their food.
-    => Any other screen by clicking one of them on the tab bar.
-    => Login screen by clicking logout.
+    * Home after a user posts their food.
+    * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
  * Search Screen.
-    => Any other screen by clicking one of them on the tab bar.
-    => Login screen by clicking logout.
+    * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
  * Send Request Screen
-    => Home after sending a request.
-    => Any other screen by clicking one of them on the tab bar.
-    => Login screen by clicking logout.
+    * Home after sending a request.
+    * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
  * Notification Screen
-    => Any other screen by clicking one of them on the tab bar.
-    => Login screen by clicking logout.
+    * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
     
 ## Wireframes
 
 **Hand-Drawn:**
 
+<img src='https://i.imgur.com/AXiMMlk.jpg' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
 **Digital:**
 https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
 
 <img src='https://i.imgur.com/ZKQlv1m.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
-### Schema 
+## Schema 
 ### Models
 
+#### User
 
-### Walkthrough
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | username      | String   | user's unique username |
+   | password        | String | user's password | 
+   | createdAt | Date | Date that the user table was created |
+   | updatedAt | Date | Date that the user table has been updated |
+   
+#### userInfo
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | username      | String   | user's unique username |
+   | friends        | array of String | array of user's friends| 
+   | createdAt | Date | Date that the user table was created |
+   | updatedAt | Date | Date that the user table has been updated |
+   
+#### Foods
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | owner      | String   | user's unique username |
+   | image        | image file (any is taken) | user's image of their food |
+   | description | String | description of user's food |
+   | date | Date | the expiration date of the food | 
+   | notifyDay | Date | the date that user will get notified |
+   | createdAt | Date | Date that the user table was created |
+   | updatedAt | Date | Date that the user table has been updated |
+  
+
+## Walkthrough
 
 **Walkthrough of the following stories**
 
@@ -132,7 +163,7 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 - [x] User can sign up
 - [x] User stays logged in across restarts.
 - [x] User can log out.
-- [x] User can enter correct login/sign up credentials
+- [x] User must enter correct login/sign up credentials
 - [x] User can enter the expiration date of their groceries and post it to a home feed.
 - [x] User has the option to post an image from their photo gallery or camera. 
 - [x] User can search and add friends.
@@ -141,13 +172,13 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 
 <img src='https://i.imgur.com/Cqf6MJJ.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
 
-### App-Pitch-Presentation
+## App-Pitch-Presentation
 
 **Coming Soon**
 
-### Authors
+## Authors
 
-### JJDProductions:
+SendFuuds implemented by **JJDProductions:**
 
 * **Joshua Tavassolikhah** - [JoshTavasso](https://github.com/JoshTavasso)
 

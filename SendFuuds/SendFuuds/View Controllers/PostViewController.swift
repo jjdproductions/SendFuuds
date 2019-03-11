@@ -41,7 +41,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         view.endEditing(true)
     }
     
-    @IBAction func onPost(_ sender: Any) {
+    func postFood() {
         let food = PFObject(className: "Foods")
         
         food["date"] = datePicker.date
@@ -56,7 +56,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if notifyDay! > Date() {
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: 259200, repeats: false)
-        } else {
+        }
+        else {
             notifyDay = Date()
         }
         
@@ -81,6 +82,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         food["owner"] = PFUser.current()!.username!
         
         let imageData = foodImageView.image!.pngData()
+        
         let file = PFFileObject(data: imageData!)
         
         food["image"] = file
@@ -99,12 +101,26 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 //self.dateField.text = ""
                 self.descField.text = ""
                 self.foodImageView.image = self.placeholder
-                //tab bar is like an array 
+                //tab bar is like an array
                 self.tabBarController?.selectedIndex = 0
             }
             else {
                 print("error")
             }
+        }
+    }
+    
+    @IBAction func onPost(_ sender: Any) {
+        if foodImageView.image! == placeholder {
+            let alert = UIAlertController(title: "No Image Found",
+                                          message: "Please pick an image",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
+            
+        else {
+            postFood()
         }
         
     }

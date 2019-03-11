@@ -19,8 +19,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         username.returnKeyType = .done
         password.delegate = self
         password.returnKeyType = .done
-
-        // Do any additional setup after loading the view.
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -52,31 +50,68 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Helper function for checking user password when signing up
+    func checkPassword() -> Bool {
+        
+        let passwordInput = password.text
+        
+        // Password must contain at least 1 capital letter, lowercase letter, digit, and symbol.
+        // Must be at least 8 characters long
+        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{8,}$"
+        
+        let range = NSRange(location: 0, length: passwordInput!.utf16.count)
+        let regex = try! NSRegularExpression(pattern: passwordRegex)
+        
+        if regex.firstMatch(in: passwordInput!, options: [], range: range) != nil {
+            return true
+        }
+        else {
+            let alert = UIAlertController(title: "Please input a stronger password",
+                                          message: "Must be at least 8 characters long and contain at least 1 captial letter, lowercase letter, digit, and symbol.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            return false
+        }
+    }
+    
     @IBAction func onSignup(_ sender: Any) {
         let user = PFUser()
         user.username = username.text
-        user.password = password.text
         let userInfo = PFObject(className: "userInfo")
-        
-        userInfo["username"] = username.text!
-        userInfo["friends"] = [String]()
-        
-        userInfo.saveInBackground {
-            (success, error) in
-            if success {
-            }
+        if username.text == "" {
+            let alert = UIAlertController(title: "Error occured when signing up",
+                                          message: "Please input a username",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
         }
+
+        let passwordSuccess = checkPassword()
         
-        user.signUpInBackground { (success, error) in
-            if success {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        if passwordSuccess {
+            user.password = password.text!
+            userInfo["username"] = username.text!
+            userInfo["friends"] = [String]()
+            
+            userInfo.saveInBackground {
+                (success, error) in
+                if success {
+                    print("UserInfo successfully saved")
+                }
             }
-            else {
-                let alert = UIAlertController(title: "Error occured when signing up",
-                                              message: "Please make sure you are signing up with a unique username and password",
-                                              preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true)
+            
+            user.signUpInBackground { (success, error) in
+                if success {
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                }
+                else {
+                    let alert = UIAlertController(title: "Error occured when signing up",
+                                                  message: "Please use a unique username and password",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alert, animated: true)
+                }
             }
         }
     }

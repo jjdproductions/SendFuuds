@@ -35,6 +35,7 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
 - [x] User can sign up
 - [x] User stays logged in across restarts.
 - [x] User can log out.
+- [x] User must enter correct login/sign up credentials
 - [x] User must be able to enter the expiration date of their groceries and post it to a home feed.
 - [x] User must be able to search and add friends.
 - [x] User must only see his own posts and his friends' posts on the home feed.
@@ -128,7 +129,9 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 
 ### Authors
 
-* **Josh Tavassolikhah** - [JoshTavasso](https://github.com/JoshTavasso)
+### JJDProductions:
+
+* **Joshua Tavassolikhah** - [JoshTavasso](https://github.com/JoshTavasso)
 
 * **Justin Leong** - [justinleong360](https://github.com/justinleong360)
 

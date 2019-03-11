@@ -82,7 +82,7 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 
 Gif showcasing wireframe:
 
-<img src='https://i.imgur.com/Ud3Cvog.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
+<img src='https://i.imgur.com/ZKQlv1m.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
 ---
 

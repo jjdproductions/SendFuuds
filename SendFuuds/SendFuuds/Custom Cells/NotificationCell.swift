@@ -9,7 +9,11 @@
 import UIKit
 
 class NotificationCell: UITableViewCell {
-
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var removeButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

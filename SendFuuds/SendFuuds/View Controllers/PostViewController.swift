@@ -50,13 +50,22 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         var dateComponent = DateComponents()
         dateComponent.day = notifyInDays
         
-        let notifyDay = Calendar.current.date(byAdding: dateComponent, to:datePicker.date)
+        var notifyDay = Calendar.current.date(byAdding: dateComponent, to:datePicker.date)
         
         var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         
         if notifyDay! > Date() {
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: 259200, repeats: false)
+        } else {
+            notifyDay = Date()
         }
+        
+        let notification = PFObject(className: "Notifications")
+        
+        notification["username"] = PFUser.current()!.username!
+        notification["food"] = descField.text!
+        notification["text"] = descField.text! + " is about to expire!!! Please take action!"
+        notification["day"] = notifyDay
         
         let content = UNMutableNotificationContent()
         content.title = "Food about to expire!!"
@@ -66,6 +75,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
+        
         food["notifyDay"] = notifyDay
         food["description"] = descField.text!
         food["owner"] = PFUser.current()!.username!
@@ -74,6 +84,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let file = PFFileObject(data: imageData!)
         
         food["image"] = file
+        notification["image"] = file
+        
+        notification.saveInBackground {
+            (success, error) in
+            if success {
+                print("Notification successfully saved")
+            }
+        }
         
         food.saveInBackground {
             (success, error) in

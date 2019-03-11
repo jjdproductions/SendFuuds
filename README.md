@@ -69,6 +69,8 @@ Have you ever had food that you couldn't finish, and just ended up throwing it a
      * User can add another user
  * Send Request Screen
      * User can ask friends if they want their soon-to-expire food.
+ * Notification Screen
+     * User can see recent notifications that they have received.
 
 ### App Navigation Flows
 

@@ -44,9 +44,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         friends.append(user!.username!)
         
         let query = PFQuery(className: "Foods")
-        query.includeKeys(["owner", "description", "image"])
+        query.includeKeys(["owner", "description", "image", "public"])
         //finding the all the keys that are contained in the Array Friends
         query.whereKey("owner", containedIn: friends)
+        query.whereKey("public", equalTo: true)
         //display newer posts on top
         query.order(byDescending: "createdAt")
         query.limit = 20

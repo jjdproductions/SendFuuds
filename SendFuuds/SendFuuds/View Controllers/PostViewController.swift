@@ -80,6 +80,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         food["notifyDay"] = notifyDay
         food["description"] = descField.text!
         food["owner"] = PFUser.current()!.username!
+        food["public"] = false
+        food["notification"] = notification
         
         let imageData = foodImageView.image!.pngData()
         

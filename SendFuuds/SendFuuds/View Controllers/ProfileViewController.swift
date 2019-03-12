@@ -81,7 +81,44 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             for food in object! {
                 let foodId = food.objectId
                 if id == foodId {
-                    food.deleteInBackground(block: { (success, error) in
+                    let notification = food["notification"] as! PFObject
+                    notification.deleteInBackground(block: { (success, error) in
+                        if success {
+                            food.deleteInBackground(block: { (success, error) in
+                                if success {
+                                    self.reload()
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                            })
+                        }
+                    })
+                }
+            }
+        })
+        
+        // update button text when user presses add button
+        tableView.reloadData()
+    }
+    
+    @objc func makePublic(sender:UIButton) {
+        //creating a varaible for current PFUser
+        let user = PFUser.current()
+        
+        let center = sender.center
+        let point = sender.superview!.convert(center, to:self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: point)
+        let cell = self.tableView.cellForRow(at: indexPath!) as! ProfileCell
+        
+        let id = cell.objectIdLabel.text
+        
+        let find = PFQuery(className: "Foods")
+        let findFood = find.whereKey("owner", equalTo: user!.username!)
+        findFood.findObjectsInBackground(block: { (object, error) in
+            for food in object! {
+                let foodId = food.objectId
+                if id == foodId {
+                    food["public"] = true
+                    food.saveInBackground(block: { (success, error) in
                         if success {
                             self.reload()
                         }
@@ -112,6 +149,19 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.foodImage.af_setImage(withURL: url)
         
         cell.removeButton.addTarget(self, action: #selector(removeFood), for: .touchUpInside)
+        
+        if (food["public"] as! Bool) == true
+        {
+            cell.publicButton.setTitle("Already public", for: .normal)
+            cell.publicButton.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            cell.publicButton.isUserInteractionEnabled = false
+            
+        }
+        else
+        {
+            cell.publicButton.addTarget(self, action: #selector(makePublic), for: .touchUpInside)
+        }
+        
         
         return cell
     }

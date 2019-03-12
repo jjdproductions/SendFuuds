@@ -172,6 +172,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onProfile(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)

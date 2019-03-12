@@ -20,6 +20,8 @@
 		854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7EF222E5F1700C50107 /* HomeViewController.swift */; };
 		856EC3872234E79800771877 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EC3862234E79800771877 /* NotificationViewController.swift */; };
 		856EC3892234E7D500771877 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EC3882234E7D500771877 /* NotificationCell.swift */; };
+		857421ED223776620098FF2B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857421EC223776620098FF2B /* ProfileViewController.swift */; };
+		857421EF223778A50098FF2B /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857421EE223778A50098FF2B /* ProfileCell.swift */; };
 		857DFFDD2231DF8E002D086F /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857DFFDC2231DF8E002D086F /* AddFriendCell.swift */; };
 		85B74F282230856C001DF5CA /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74F272230856C001DF5CA /* FoodCell.swift */; };
 		85B74F2A22309213001DF5CA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74F2922309213001DF5CA /* PostViewController.swift */; };
@@ -68,6 +70,8 @@
 		854BE7EF222E5F1700C50107 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		856EC3862234E79800771877 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		856EC3882234E7D500771877 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		857421EC223776620098FF2B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		857421EE223778A50098FF2B /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		857DFFDC2231DF8E002D086F /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		85B74F272230856C001DF5CA /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		85B74F2922309213001DF5CA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				854042122231C817004C1142 /* SearchViewController.swift */,
 				854042142231C9C5004C1142 /* RequestViewController.swift */,
 				856EC3862234E79800771877 /* NotificationViewController.swift */,
+				857421EC223776620098FF2B /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				85B74F272230856C001DF5CA /* FoodCell.swift */,
 				857DFFDC2231DF8E002D086F /* AddFriendCell.swift */,
 				856EC3882234E7D500771877 /* NotificationCell.swift */,
+				857421EE223778A50098FF2B /* ProfileCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -453,8 +459,10 @@
 				85B74F282230856C001DF5CA /* FoodCell.swift in Sources */,
 				31964234222E517000C10973 /* AppDelegate.swift in Sources */,
 				856EC3872234E79800771877 /* NotificationViewController.swift in Sources */,
+				857421ED223776620098FF2B /* ProfileViewController.swift in Sources */,
 				854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */,
 				85B74F2A22309213001DF5CA /* PostViewController.swift in Sources */,
+				857421EF223778A50098FF2B /* ProfileCell.swift in Sources */,
 				856EC3892234E7D500771877 /* NotificationCell.swift in Sources */,
 				857DFFDD2231DF8E002D086F /* AddFriendCell.swift in Sources */,
 			);

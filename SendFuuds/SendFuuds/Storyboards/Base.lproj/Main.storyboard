@@ -225,6 +225,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="mCv-0j-WoP">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="3Ev-Nz-uIf">
+                            <connections>
+                                <action selector="onProfile:" destination="vSZ-MR-IMN" id="Ozz-jF-Yqe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="qem-FU-aI2">
                             <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -236,6 +241,7 @@
                         <outlet property="datePicker" destination="PnD-SY-Xuy" id="lBX-t2-899"/>
                         <outlet property="descField" destination="fd6-Zg-MjE" id="s9S-QX-rIc"/>
                         <outlet property="foodImageView" destination="b8I-ny-Xu5" id="XyI-xp-uf8"/>
+                        <segue destination="Ssv-jb-gKK" kind="presentation" identifier="profileSegue" id="xcT-wP-8NI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQ0-JB-swL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -322,6 +328,11 @@
                         <viewLayoutGuide key="safeArea" id="naT-py-Oc2"/>
                     </view>
                     <navigationItem key="navigationItem" id="aSr-Mn-h3h">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="uIf-xf-Lwd">
+                            <connections>
+                                <action selector="onProfile:" destination="rPG-dW-OCK" id="zuw-if-4ad"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="bS9-Wd-uMR">
                             <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -331,6 +342,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OWS-cv-S4N" id="psW-Cc-qcT"/>
+                        <segue destination="Ssv-jb-gKK" kind="presentation" identifier="profileSegue" id="29U-94-iPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syR-V6-hAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,6 +438,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Jjx-MS-gP5">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="j11-1o-UZQ">
+                            <connections>
+                                <action selector="onProfile:" destination="E0T-Nf-VSN" id="hOh-F4-rHo"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="UEJ-eM-erv">
                             <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -436,6 +453,7 @@
                     <connections>
                         <outlet property="searchBar" destination="vAw-p9-Kmu" id="Ls6-3i-iJc"/>
                         <outlet property="tableView" destination="DYy-Nq-zri" id="b47-B3-7p6"/>
+                        <segue destination="Ssv-jb-gKK" kind="presentation" identifier="profileSegue" id="EUS-nH-TB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgj-Xa-tPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -618,6 +636,11 @@
                         <viewLayoutGuide key="safeArea" id="16W-Su-91H"/>
                     </view>
                     <navigationItem key="navigationItem" id="iAz-FT-3Mi">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="pUy-4s-PJb">
+                            <connections>
+                                <action selector="onProfile:" destination="1eI-Xx-ORG" id="aV6-LJ-3NY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Vij-wr-VIC">
                             <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -627,11 +650,132 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="o5P-Rn-O7G" id="qGc-iX-Eib"/>
+                        <segue destination="Ssv-jb-gKK" kind="presentation" identifier="profileSegue" id="tva-Qv-j4Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C30-YX-KbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3840.8000000000002" y="1133.8830584707648"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="ohR-vw-uMW">
+            <objects>
+                <viewController restorationIdentifier="ProfileViewController" storyboardIdentifier="ProfileViewController" id="6fq-gk-SP8" customClass="ProfileViewController" customModule="SendFuuds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQI-mM-vMj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-rz-cW4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProfileCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="359" id="1RQ-DH-bCy" customClass="ProfileCell" customModule="SendFuuds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="359"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1RQ-DH-bCy" id="fO2-gg-zVO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="358.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lte-LH-MgQ">
+                                                    <rect key="frame" x="8" y="8" width="359" height="226"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="lte-LH-MgQ" secondAttribute="height" multiplier="359:226" id="3G8-F2-bbJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-eB-GS6">
+                                                    <rect key="frame" x="227" y="288" width="83" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OP2-eB-GS6" secondAttribute="height" multiplier="5:3" id="Ov5-bU-U4x"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Make Public"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-G2-GR8">
+                                                    <rect key="frame" x="8" y="242" width="359" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLK-XD-nBF">
+                                                    <rect key="frame" x="8" y="270.5" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sV3-zZ-iWD">
+                                                    <rect key="frame" x="15" y="327" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgM-LE-DYF">
+                                                    <rect key="frame" x="65" y="288" width="83" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="jgM-LE-DYF" secondAttribute="height" multiplier="5:3" id="1vg-cT-Fgc"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Delete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lte-LH-MgQ" firstAttribute="top" secondItem="fO2-gg-zVO" secondAttribute="top" constant="8" id="FC9-rl-C8A"/>
+                                                <constraint firstItem="MdH-G2-GR8" firstAttribute="top" secondItem="lte-LH-MgQ" secondAttribute="bottom" constant="8" id="GA5-AY-3E9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OP2-eB-GS6" secondAttribute="trailing" constant="50" id="M7X-hR-HNp"/>
+                                                <constraint firstItem="jgM-LE-DYF" firstAttribute="leading" secondItem="fO2-gg-zVO" secondAttribute="leadingMargin" constant="50" id="MTA-pJ-Lsd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OP2-eB-GS6" secondAttribute="bottom" constant="10" id="PJA-Sx-l3w"/>
+                                                <constraint firstItem="wLK-XD-nBF" firstAttribute="leading" secondItem="fO2-gg-zVO" secondAttribute="leading" constant="8" id="QHC-tD-PoV"/>
+                                                <constraint firstAttribute="trailing" secondItem="lte-LH-MgQ" secondAttribute="trailing" constant="8" id="T2F-Fa-QfF"/>
+                                                <constraint firstItem="MdH-G2-GR8" firstAttribute="leading" secondItem="fO2-gg-zVO" secondAttribute="leading" constant="8" id="Y53-Bh-utv"/>
+                                                <constraint firstItem="wLK-XD-nBF" firstAttribute="top" secondItem="MdH-G2-GR8" secondAttribute="bottom" constant="8" id="bBW-sh-hXe"/>
+                                                <constraint firstAttribute="trailing" secondItem="wLK-XD-nBF" secondAttribute="trailing" constant="8" id="cTt-Z0-jbl"/>
+                                                <constraint firstItem="jgM-LE-DYF" firstAttribute="top" secondItem="wLK-XD-nBF" secondAttribute="bottom" constant="16" id="fFT-lg-xOw"/>
+                                                <constraint firstItem="OP2-eB-GS6" firstAttribute="top" secondItem="wLK-XD-nBF" secondAttribute="bottom" constant="16" id="gk4-2c-ui0"/>
+                                                <constraint firstItem="lte-LH-MgQ" firstAttribute="leading" secondItem="fO2-gg-zVO" secondAttribute="leading" constant="8" id="h5g-NZ-Lv8"/>
+                                                <constraint firstAttribute="trailing" secondItem="MdH-G2-GR8" secondAttribute="trailing" constant="8" id="oVA-xp-Rgy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jgM-LE-DYF" secondAttribute="bottom" constant="10" id="y74-R7-wK2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descLabel" destination="MdH-G2-GR8" id="lEa-Bl-kmm"/>
+                                            <outlet property="expirationLabel" destination="wLK-XD-nBF" id="cNW-IS-bjP"/>
+                                            <outlet property="foodImage" destination="lte-LH-MgQ" id="GKV-Fz-Nr8"/>
+                                            <outlet property="objectIdLabel" destination="sV3-zZ-iWD" id="7vg-ne-Czq"/>
+                                            <outlet property="publicButton" destination="OP2-eB-GS6" id="LXk-e3-yJl"/>
+                                            <outlet property="removeButton" destination="jgM-LE-DYF" id="se7-Kr-Y0W"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r7Z-rz-cW4" firstAttribute="leading" secondItem="q8U-LK-BJV" secondAttribute="leading" id="0K9-GK-CZi"/>
+                            <constraint firstItem="r7Z-rz-cW4" firstAttribute="top" secondItem="q8U-LK-BJV" secondAttribute="top" id="9Na-GH-Pvt"/>
+                            <constraint firstAttribute="bottom" secondItem="r7Z-rz-cW4" secondAttribute="bottom" id="cTx-6O-Y16"/>
+                            <constraint firstItem="r7Z-rz-cW4" firstAttribute="trailing" secondItem="q8U-LK-BJV" secondAttribute="trailing" id="ukI-LE-rJo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q8U-LK-BJV"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="g1D-0K-efe">
+                        <barButtonItem key="leftBarButtonItem" title="Back to home" id="zNv-Z7-sgW">
+                            <connections>
+                                <action selector="onBack:" destination="6fq-gk-SP8" id="tNq-KH-rEf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="6H1-gO-kHM">
+                            <connections>
+                                <action selector="onLogout:" destination="6fq-gk-SP8" id="Qfs-UJ-rsp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="r7Z-rz-cW4" id="Eu9-rB-Z0k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04l-Wb-ieF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="2615"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="oQj-bh-ZNa">
@@ -652,6 +796,24 @@
             </objects>
             <point key="canvasLocation" x="3841" y="104"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zir-hT-GSP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ssv-jb-gKK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5sO-ff-ZT4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6fq-gk-SP8" kind="relationship" relationship="rootViewController" id="E4D-4W-g4O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WuZ-QP-uUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="1916"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Image" width="21" height="21"/>
@@ -661,4 +823,7 @@
         <image name="paper_plane" width="30" height="30"/>
         <image name="photo-camera" width="384" height="384"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tva-Qv-j4Q"/>
+    </inferredMetricsTieBreakers>
 </document>

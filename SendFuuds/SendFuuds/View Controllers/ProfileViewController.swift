@@ -135,7 +135,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
         let food = foods[indexPath.row]
         
-        cell.expirationLabel.text = food["date"] as? String
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let dateFormatted = formatter.string(from: food["date"] as! Date)
+        
+        
+        cell.expirationLabel.text = "Expiration Date: " + dateFormatted
         
         cell.descLabel.text = food["description"] as? String
         

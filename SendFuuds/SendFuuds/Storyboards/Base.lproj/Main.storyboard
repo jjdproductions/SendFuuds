@@ -226,6 +226,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mCv-0j-WoP">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="3Ev-Nz-uIf">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onProfile:" destination="vSZ-MR-IMN" id="Ozz-jF-Yqe"/>
                             </connections>
@@ -270,7 +271,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="271" id="7uy-y2-HCJ" customClass="FoodCell" customModule="SendFuuds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="271" id="7uy-y2-HCJ" customClass="FoodCell" customModule="SendFuuds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="271"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7uy-y2-HCJ" id="SFH-Xo-Hao">
@@ -283,14 +284,14 @@
                                                         <constraint firstAttribute="width" secondItem="Son-O8-B1D" secondAttribute="height" multiplier="359:226" id="01n-xb-IxT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-X0-biK">
-                                                    <rect key="frame" x="16" y="242" width="54.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-X0-biK">
+                                                    <rect key="frame" x="16" y="242" width="60" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-Rc-hST">
-                                                    <rect key="frame" x="78.5" y="242" width="288.5" height="20.5"/>
+                                                    <rect key="frame" x="84" y="242" width="283" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -329,6 +330,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aSr-Mn-h3h">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="uIf-xf-Lwd">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onProfile:" destination="rPG-dW-OCK" id="zuw-if-4ad"/>
                             </connections>
@@ -347,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syR-V6-hAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="1134"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="1133.8830584707648"/>
         </scene>
         <!--Home-->
         <scene sceneID="1nG-5i-zMj">
@@ -439,6 +441,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jjx-MS-gP5">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="j11-1o-UZQ">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onProfile:" destination="E0T-Nf-VSN" id="hOh-F4-rHo"/>
                             </connections>
@@ -557,7 +560,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotificationCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="327" id="lqE-Bu-bcI" customClass="NotificationCell" customModule="SendFuuds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotificationCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="327" id="lqE-Bu-bcI" customClass="NotificationCell" customModule="SendFuuds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="327"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lqE-Bu-bcI" id="hXN-ER-JG3">
@@ -582,6 +585,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6y3-bi-DIY"/>
                                                         <constraint firstAttribute="height" constant="30" id="pVx-VV-idP"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" title="Send to a friend"/>
                                                     <connections>
                                                         <action selector="onSend:" destination="1eI-Xx-ORG" eventType="touchUpInside" id="nyB-1Q-8eq"/>
@@ -593,6 +597,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Taa-1a-hOR"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="drA-vr-iH9"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" title="Food already finished"/>
                                                     <connections>
                                                         <action selector="onRemove:" destination="1eI-Xx-ORG" eventType="touchUpInside" id="6cP-4Z-mke"/>
@@ -637,6 +642,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iAz-FT-3Mi">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="pUy-4s-PJb">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onProfile:" destination="1eI-Xx-ORG" id="aV6-LJ-3NY"/>
                             </connections>
@@ -687,15 +693,17 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OP2-eB-GS6" secondAttribute="height" multiplier="5:3" id="Ov5-bU-U4x"/>
                                                     </constraints>
-                                                    <state key="normal" title="Make Public"/>
+                                                    <state key="normal" title="Make Public">
+                                                        <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-G2-GR8">
-                                                    <rect key="frame" x="8" y="242" width="359" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-G2-GR8">
+                                                    <rect key="frame" x="8" y="242" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLK-XD-nBF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Expiration Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLK-XD-nBF">
                                                     <rect key="frame" x="8" y="270.5" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -713,7 +721,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jgM-LE-DYF" secondAttribute="height" multiplier="5:3" id="1vg-cT-Fgc"/>
                                                     </constraints>
-                                                    <state key="normal" title="Delete"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -757,12 +767,14 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="g1D-0K-efe">
-                        <barButtonItem key="leftBarButtonItem" title="Back to home" id="zNv-Z7-sgW">
+                        <barButtonItem key="leftBarButtonItem" title="Back " id="zNv-Z7-sgW">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onBack:" destination="6fq-gk-SP8" id="tNq-KH-rEf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="6H1-gO-kHM">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="6fq-gk-SP8" id="Qfs-UJ-rsp"/>
                             </connections>

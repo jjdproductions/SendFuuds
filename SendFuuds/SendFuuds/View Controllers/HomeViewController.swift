@@ -82,9 +82,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
         let food = foods[indexPath.row]
         
-        cell.ownerLabel.text = food["owner"] as? String
+        cell.ownerLabel.text = (food["owner"] as? String)! + ": "
         
         cell.descLabel.text = food["description"] as? String
+        
+        // ADD DATE PLS PLS
         
         let imageFile = food["image"] as! PFFileObject
         let urlString = imageFile.url!

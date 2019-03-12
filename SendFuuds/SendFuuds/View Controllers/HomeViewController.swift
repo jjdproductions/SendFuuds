@@ -15,18 +15,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var foods = [PFObject]()
     
+    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        myRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
+    @objc func refresh() {
+        self.loadPosts()
+        myRefreshControl.endRefreshing()
+    }
+    
+    @objc func loadPosts() {
         let user = PFUser.current()
         let currentUser = PFQuery(className: "userInfo")
         currentUser.whereKey("username", equalTo: user!.username!)
@@ -58,6 +64,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
         }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.loadPosts()
     }
     
     @IBAction func onProfile(_ sender: Any) {

@@ -43,21 +43,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        let query = PFQuery(className: "Foods")
-        query.includeKeys(["owner", "description", "date", "image"])
-        //finding the all the keys that are contained in the Array Friends
-        query.whereKey("owner", equalTo: PFUser.current()!.username!)
-        //display newer posts on top
-        query.order(byDescending: "createdAt")
-        query.limit = 20
-        
-        query.findObjectsInBackground { (foods, error) in
-            if foods != nil {
-                self.foods = foods!
-                self.tableView.reloadData()
-            }
-        }
+        self.reload()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,7 +125,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         formatter.dateFormat = "MM/dd/yyyy"
         let dateFormatted = formatter.string(from: food["date"] as! Date)
         
-        
         cell.expirationLabel.text = "Expiration Date: " + dateFormatted
         
         cell.descLabel.text = food["description"] as? String
@@ -155,18 +140,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.removeButton.addTarget(self, action: #selector(removeFood), for: .touchUpInside)
         
-        if (food["public"] as! Bool) == true
-        {
+        if (food["public"] as! Bool) == true {
             cell.publicButton.setTitle("Already public", for: .normal)
             cell.publicButton.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             cell.publicButton.isUserInteractionEnabled = false
-            
         }
-        else
-        {
+        else {
             cell.publicButton.addTarget(self, action: #selector(makePublic), for: .touchUpInside)
         }
-        
         
         return cell
     }

@@ -159,7 +159,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let expDateFormatted = formatter.string(from: food["date"] as! Date)
         let formatter2 = DateFormatter()
         formatter2.dateFormat = "MM/dd/yyyy"
-        let postDateFormatted = formatter2.string(from: food.createdAt as! Date)
+        let postDateFormatted = formatter2.string(from: food.createdAt! )
         
         cell.postDateLabel.text = postDateFormatted
         cell.expDateLabel.text = expDateFormatted
@@ -179,7 +179,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let food = sender
             let chatNav = segue.destination as! UINavigationController
             let chatViewController = chatNav.viewControllers.first as! ChatViewController
-            chatViewController.food = food as! PFObject
+            chatViewController.food = (food as! PFObject)
         }
         
     }

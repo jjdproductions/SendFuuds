@@ -15,6 +15,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dayField: UITextField!
     
     let picker = UIImagePickerController()
     
@@ -46,7 +47,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         food["date"] = datePicker.date
         
-        let notifyInDays = -3
+        var days:Int? =  Int(dayField.text!)
+        days = -days!
+        
+        let notifyInDays = days
         var dateComponent = DateComponents()
         dateComponent.day = notifyInDays
         
@@ -101,6 +105,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             (success, error) in
             if success {
                 //self.dateField.text = ""
+                self.dayField.text = ""
                 self.descField.text = ""
                 self.foodImageView.image = self.placeholder
                 //tab bar is like an array

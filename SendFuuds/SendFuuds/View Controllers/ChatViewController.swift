@@ -139,7 +139,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let expDateFormatted = formatter.string(from: food["date"] as! Date)
             let formatter2 = DateFormatter()
             formatter2.dateFormat = "MM/dd/yyyy"
-            let postDateFormatted = formatter2.string(from: food.createdAt as! Date)
+            let postDateFormatted = formatter2.string(from: food.createdAt!)
             
             cell.postDateLabel.text = postDateFormatted
             cell.expDateLabel.text = expDateFormatted

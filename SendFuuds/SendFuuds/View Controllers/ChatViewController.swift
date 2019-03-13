@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import MessageInputBar
+import UserNotifications
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate  {
 
@@ -22,6 +23,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         commentBar.inputTextView.placeholder = "Add a comment..."
         commentBar.sendButton.title = "Send"
         commentBar.delegate = self
@@ -83,7 +85,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func loadPost() {
         let query = PFQuery(className: "Foods")
         query.includeKeys(["owner", "description", "image", "public", "comments", "comments.author"])
-        //finding the all the keys that are contained in the Array Friends
         query.whereKey("objectId", equalTo: food!.objectId as! String)
         
         query.findObjectsInBackground { (foundFood, error) in

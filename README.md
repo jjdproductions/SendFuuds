@@ -14,7 +14,7 @@
 ### App Description
 Have you ever had food that you couldn't finish, and just ended up throwing it away? Chances are, you have. 
 
-**JJDProductions** aims to solve this great problem in the world today with **SendFuuds**.
+**JJDProductions** aims to solve this huge problem in the world today with **SendFuuds**.
 
 **SendFuuds** is an application where users can get notified that their food is about to expire and are given an option to share it with friends.
 
@@ -42,22 +42,21 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [x] User can share their post publicly to the home feed.  
 - [x] User can post an image from either their photo gallery or camera. 
 - [x] User can search and add friends.
-- [x] User can only see their own posts and his friends' posts on the home feed.
+- [x] User can only see their own posts and their friends' posts on the home feed.
 - [x] User gets notified when their food is about to expire.
 - [x] User can remove their own posts from the personal list.
 - [x] User can comment on other user's posts. 
 - [x] User gets notified when their food is about to expire.
 
 **Optional Nice-to-have Stories**
+- [ ] Users have a fully functional profile page, as opposed to just a personal list of food. 
+- [ ] To add a friend, a User should send a friend request to another User, and the other User has to accept that request in order for the two Users to be friends. 
+- [ ] User can remove friends. 
 - [ ] Once a food is expired, the food should be deleted from the User's personal list and home feed.
-- [ ] User can notify friends about getting or sharing their soon-to-expire food.
-- [ ] User can click the image of a post which would send the poster a notification saying that the user is interested in their food. 
-- [ ] At the end of each month, show how much food was wasted.
-- [ ] Users have a profile page
-- [ ] Users can see mutual friends.
-- [ ] Users can share on other social media, such as Instagram or Facebook.
-- [ ] Users can livestream themselves eating.
-- [ ] Users can filter out searches for specific food.
+- [ ] When a User comments on a post, the creator of the post gets a push notification. 
+- [ ] User can privately message other users
+- [ ] User can see mutual friends.
+- [ ] User can search for specific food in their feed. 
 
 ### App Screen Archetypes
 

@@ -70,6 +70,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                     let notification = food["notification"] as! PFObject
                     notification.deleteInBackground(block: { (success, error) in
                         if success {
+                            let foodComments = (food["comments"] as? [PFObject]) ?? []
+                            for comment in foodComments {
+                                do {
+                                    try comment.delete()
+                                } catch {
+                                    print("error deleting comment")
+                                }
+                                
+                            }
                             food.deleteInBackground(block: { (success, error) in
                                 if success {
                                     self.reload()

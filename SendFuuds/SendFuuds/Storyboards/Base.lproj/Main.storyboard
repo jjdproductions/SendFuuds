@@ -939,7 +939,7 @@
                                             <outlet property="postDateLabel" destination="GK8-m1-U0K" id="HhG-UA-kzC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="W9N-sC-grB" customClass="CommentCell" customModule="SendFuuds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" id="W9N-sC-grB" customClass="CommentCell" customModule="SendFuuds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="349" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9N-sC-grB" id="TGx-zv-DuG">

@@ -28,6 +28,7 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         
         let query = PFQuery(className: "Notifications")
         query.whereKey("username", equalTo: PFUser.current()!.username!)
+        query.whereKey("day", lessThan: Date())
         query.order(byDescending: "createdAt")
         query.limit = 20
         query.findObjectsInBackground { (notifications, error) in

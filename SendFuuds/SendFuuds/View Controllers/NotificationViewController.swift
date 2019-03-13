@@ -52,13 +52,10 @@ class NotificationViewController: UIViewController, UITableViewDataSource, UITab
         delegate.window?.rootViewController = loginViewController
     }
     
-    @IBAction func onSend(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 3
+    @IBAction func onViewProfile(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
     }
     
-    @IBAction func onRemove(_ sender: Any) {
-        
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count

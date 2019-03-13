@@ -1,19 +1,16 @@
 //
-//  FoodCell.swift
+//  CommentCell.swift
 //  SendFuuds
 //
-//  Created by Justin Leong on 3/6/19.
+//  Created by Justin Leong on 3/12/19.
 //  Copyright © 2019 JoshTav. All rights reserved.
 //
 
 import UIKit
 
-class FoodCell: UITableViewCell {
-    @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var ownerLabel: UILabel!
-    @IBOutlet weak var descLabel: UILabel!
-    @IBOutlet weak var postDateLabel: UILabel!
-    @IBOutlet weak var expDateLabel: UILabel!
+class CommentCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

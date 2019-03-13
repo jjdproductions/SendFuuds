@@ -8,23 +8,73 @@
 
 import UIKit
 import Parse
+import MessageInputBar
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let commentBar = MessageInputBar()
+    var showsCommentBar = false
+    
     var foods = [PFObject]()
+    var selectedPost: PFObject!
     
     let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commentBar.inputTextView.placeholder = "Add a comment..."
+        commentBar.sendButton.title = "Send"
+        commentBar.delegate = self
+        
         tableView.delegate = self
         tableView.dataSource = self
         myRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
-        // Do any additional setup after loading the view.
+        
+        tableView.keyboardDismissMode = .interactive
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        let comment = PFObject(className: "Comments")
+        comment["text"] = text
+        comment["food"] = selectedPost
+        comment["author"] = PFUser.current()!
+        
+        selectedPost.add(comment, forKey: "comments")
+        
+        selectedPost.saveInBackground { (success, error) in
+            if success {
+                print("comment saved")
+            } else {
+                print("error")
+            }
+        }
+        self.loadPosts()
+        
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillBeHidden(note: Notification) {
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+    }
+    
+    override var inputAccessoryView: UIView? {
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return showsCommentBar
     }
     
     @objc func refresh() {
@@ -50,7 +100,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         friends.append(user!.username!)
         
         let query = PFQuery(className: "Foods")
-        query.includeKeys(["owner", "description", "image", "public"])
+        query.includeKeys(["owner", "description", "image", "public", "comments", "comments.author"])
         //finding the all the keys that are contained in the Array Friends
         query.whereKey("owner", containedIn: friends)
         query.whereKey("public", equalTo: true)
@@ -86,28 +136,75 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         delegate.window?.rootViewController = loginViewController
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let food = foods[indexPath.section]
+        let comments = (food["comments"] as? [PFObject]) ?? []
+        
+        if indexPath.row == comments.count + 1 {
+            showsCommentBar = true
+            becomeFirstResponder()
+            commentBar.inputTextView.becomeFirstResponder()
+            
+            selectedPost = food
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let food = foods[section]
+        let comments = (food["comments"] as? [PFObject]) ?? []
+        return comments.count + 2
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return foods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
-        let food = foods[indexPath.row]
+        let food = foods[indexPath.section]
+        let comments = (food["comments"] as? [PFObject]) ?? []
         
-        cell.ownerLabel.text = (food["owner"] as? String)! + ": "
-        
-        cell.descLabel.text = food["description"] as? String
-        
-        // ADD DATE PLS PLS
-        
-        let imageFile = food["image"] as! PFFileObject
-        let urlString = imageFile.url!
-        
-        let url = URL(string: urlString)!
-        
-        cell.photoView.af_setImage(withURL: url)
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
+            
+            
+            cell.ownerLabel.text = (food["owner"] as? String)! + ": "
+            
+            cell.descLabel.text = food["description"] as? String
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd/yyyy"
+            let expDateFormatted = formatter.string(from: food["date"] as! Date)
+            let formatter2 = DateFormatter()
+            formatter2.dateFormat = "MM/dd/yyyy"
+            let postDateFormatted = formatter2.string(from: food.createdAt as! Date)
+            
+            cell.postDateLabel.text = postDateFormatted
+            cell.expDateLabel.text = expDateFormatted
+            
+            let imageFile = food["image"] as! PFFileObject
+            let urlString = imageFile.url!
+            
+            let url = URL(string: urlString)!
+            
+            cell.photoView.af_setImage(withURL: url)
+            
+            return cell
+        } else if indexPath.row <= comments.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+            
+            let comment = comments[indexPath.row - 1]
+            cell.commentLabel.text = comment["text"] as? String
+            
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            
+            return cell
+        }
     }
     
     /*

@@ -23,7 +23,7 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 ### App Evaluation
 - **Category:** Social Media/Personal use
 - **Mobile:** This app would be primarily developed for iOS users and will work similar to apps like [Instagram](https://www.instagram.com/?hl=en).
-- **Story:** User takes a picture of their food and enters the expiration date for it. The app will notify the user if the food is about to expire or if a friend wants their food. 
+- **Story:** A user takes a picture of their food, enters the expiration date and a general description, and posts it to their personal list. Days pass and the user gets notified that their food is about to expire, so they need to take action. The user then shares the food publicly to their friends. A friend comments on the user's post, letting the user know that they are interested in their food. The user and the friend discuss and finalize a time and place to meet. Once the friend has gotten the user's food, the user deletes the post. 
 - **Market:** Any individual could choose to use this app. We all need to be aware of the food that we waste each day!
 - **Habit:** This app could be used more often by people who cook to ensure that the groceries they buy do not expire. 
 - **Scope:** We will start by having users around UC Irvine use the application, but we expect that this application can be used by people around the world.
@@ -38,20 +38,20 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [x] User stays logged in across restarts.
 - [x] User can log out.
 - [x] User must enter correct login/sign up credentials
-- [x] User can enter the expiration date of their groceries and post it to a home feed.
-- [x] User has the option to post an image from their photo gallery or camera. 
+- [x] User can enter the expiration date and description of their food and post it to their personal list of foods.
+- [x] User can share their post publicly to the home feed.  
+- [x] User can post an image from either their photo gallery or camera. 
 - [x] User can search and add friends.
-- [x] User can only see his own posts and his friends' posts on the home feed.
+- [x] User can only see their own posts and his friends' posts on the home feed.
 - [x] User gets notified when their food is about to expire.
-- [ ] User can remove their own posts.
-- [ ] User can notify friends about getting or sharing their soon-to-expire food.
-- [ ] User can see recent notifications in a page on the application. 
-- [ ] Once a food is expired, User is no longer be able to see the food on their home feed. 
+- [x] User can remove their own posts from the personal list.
+- [x] User can comment on other user's posts. 
+- [x] User gets notified when their food is about to expire.
 
 **Optional Nice-to-have Stories**
-- [ ] User can chat with other users.
+- [ ] Once a food is expired, the food should be deleted from the User's personal list and home feed.
+- [ ] User can notify friends about getting or sharing their soon-to-expire food.
 - [ ] User can click the image of a post which would send the poster a notification saying that the user is interested in their food. 
-- [ ] User can have their own personal feed with their food and once the food is about to expire, the user is asked whether or not they want to share their food with others. 
 - [ ] At the end of each month, show how much food was wasted.
 - [ ] Users have a profile page
 - [ ] Users can see mutual friends.
@@ -71,10 +71,11 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
  * Search Screen
      * User can search for other users
      * User can add another user
- * Send Request Screen
-     * User can ask friends if they want their soon-to-expire food.
  * Notification Screen
      * User can see recent notifications that they have received.
+ * Profile Screen
+     * User can see their own posts.
+     * Future feature - User has profile image, description, and more information.
 
 ### App Navigation Flows
 
@@ -83,7 +84,6 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
  * Home Feed
  * Search User
  * Post a Food
- * Send request
  * Notification 
 
 **Flow Navigation**
@@ -100,10 +100,6 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
     * Any other screen by clicking one of them on the tab bar.
     * Login screen by clicking logout.
  * Search Screen.
-    * Any other screen by clicking one of them on the tab bar.
-    * Login screen by clicking logout.
- * Send Request Screen
-    * Home after sending a request.
     * Any other screen by clicking one of them on the tab bar.
     * Login screen by clicking logout.
  * Notification Screen
@@ -186,6 +182,6 @@ SendFuuds implemented by **JJDProductions:**
 
 * **David Yip** - [davidyip50](https://github.com/davidyip50)
 
-## Process of building this application
+### Process of building this application
 
 All authors collaborated together on 1 laptop at a time. Work was always done together and all features were implemented as a team. 

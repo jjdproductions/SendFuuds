@@ -67,6 +67,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
     }
     
     override var inputAccessoryView: UIView? {
@@ -137,74 +138,50 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let food = foods[indexPath.section]
-        let comments = (food["comments"] as? [PFObject]) ?? []
-        
-        if indexPath.row == comments.count + 1 {
-            showsCommentBar = true
-            becomeFirstResponder()
-            commentBar.inputTextView.becomeFirstResponder()
-            
-            selectedPost = food
-        }
+        self.performSegue(withIdentifier: "postSegue", sender: foods[indexPath.row])
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let food = foods[section]
-        let comments = (food["comments"] as? [PFObject]) ?? []
-        return comments.count + 2
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
         return foods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let food = foods[indexPath.section]
-        let comments = (food["comments"] as? [PFObject]) ?? []
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
+        let food = foods[indexPath.row]
         
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
-            
-            
-            cell.ownerLabel.text = (food["owner"] as? String)! + ": "
-            
-            cell.descLabel.text = food["description"] as? String
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM/dd/yyyy"
-            let expDateFormatted = formatter.string(from: food["date"] as! Date)
-            let formatter2 = DateFormatter()
-            formatter2.dateFormat = "MM/dd/yyyy"
-            let postDateFormatted = formatter2.string(from: food.createdAt as! Date)
-            
-            cell.postDateLabel.text = postDateFormatted
-            cell.expDateLabel.text = expDateFormatted
-            
-            let imageFile = food["image"] as! PFFileObject
-            let urlString = imageFile.url!
-            
-            let url = URL(string: urlString)!
-            
-            cell.photoView.af_setImage(withURL: url)
-            
-            return cell
-        } else if indexPath.row <= comments.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
-            
-            let comment = comments[indexPath.row - 1]
-            cell.commentLabel.text = comment["text"] as? String
-            
-            let user = comment["author"] as! PFUser
-            cell.nameLabel.text = user.username
-            
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
-            
-            return cell
+        cell.ownerLabel.text = (food["owner"] as? String)! + ": "
+        
+        cell.descLabel.text = food["description"] as? String
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let expDateFormatted = formatter.string(from: food["date"] as! Date)
+        let formatter2 = DateFormatter()
+        formatter2.dateFormat = "MM/dd/yyyy"
+        let postDateFormatted = formatter2.string(from: food.createdAt as! Date)
+        
+        cell.postDateLabel.text = postDateFormatted
+        cell.expDateLabel.text = expDateFormatted
+        
+        let imageFile = food["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        
+        let url = URL(string: urlString)!
+        
+        cell.photoView.af_setImage(withURL: url)
+        
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postSegue" {
+            let food = sender
+            let chatNav = segue.destination as! UINavigationController
+            let chatViewController = chatNav.viewControllers.first as! ChatViewController
+            chatViewController.food = food as! PFObject
         }
+        
     }
     
     /*

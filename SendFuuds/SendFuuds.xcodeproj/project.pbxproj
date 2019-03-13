@@ -18,6 +18,7 @@
 		854BE7EE222E5E8B00C50107 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7ED222E5E8B00C50107 /* LoginViewController.swift */; };
 		854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BE7EF222E5F1700C50107 /* HomeViewController.swift */; };
 		8564894E2238CC62006F4C78 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564894D2238CC62006F4C78 /* CommentCell.swift */; };
+		856489502238DA29006F4C78 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564894F2238DA29006F4C78 /* ChatViewController.swift */; };
 		856EC3872234E79800771877 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EC3862234E79800771877 /* NotificationViewController.swift */; };
 		856EC3892234E7D500771877 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EC3882234E7D500771877 /* NotificationCell.swift */; };
 		857421ED223776620098FF2B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857421EC223776620098FF2B /* ProfileViewController.swift */; };
@@ -68,6 +69,7 @@
 		854BE7ED222E5E8B00C50107 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		854BE7EF222E5F1700C50107 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8564894D2238CC62006F4C78 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		8564894F2238DA29006F4C78 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		856EC3862234E79800771877 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		856EC3882234E7D500771877 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		857421EC223776620098FF2B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				854042122231C817004C1142 /* SearchViewController.swift */,
 				856EC3862234E79800771877 /* NotificationViewController.swift */,
 				857421EC223776620098FF2B /* ProfileViewController.swift */,
+				8564894F2238DA29006F4C78 /* ChatViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				854BE7F0222E5F1700C50107 /* HomeViewController.swift in Sources */,
 				85B74F2A22309213001DF5CA /* PostViewController.swift in Sources */,
 				857421EF223778A50098FF2B /* ProfileCell.swift in Sources */,
+				856489502238DA29006F4C78 /* ChatViewController.swift in Sources */,
 				856EC3892234E7D500771877 /* NotificationCell.swift in Sources */,
 				857DFFDD2231DF8E002D086F /* AddFriendCell.swift in Sources */,
 				8564894E2238CC62006F4C78 /* CommentCell.swift in Sources */,

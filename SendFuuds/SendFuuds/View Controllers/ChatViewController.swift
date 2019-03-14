@@ -152,7 +152,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.photoView.af_setImage(withURL: url)
             
             return cell
-        } else if indexPath.row <= comments.count {
+            
+        }
+        else if indexPath.row <= comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
             
             let comment = comments[indexPath.row - 1]
@@ -162,7 +164,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.nameLabel.text = user.username
             
             return cell
-        } else {
+            
+        }
+        else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
             
             return cell

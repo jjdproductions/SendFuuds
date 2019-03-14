@@ -49,9 +49,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         food.saveInBackground { (success, error) in
             if success {
-                print("comment saved")
-            } else {
-                print("error")
             }
         }
         self.loadPost()

@@ -75,7 +75,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                                 do {
                                     try comment.delete()
                                 } catch {
-                                    print("error deleting comment")
                                 }
                                 
                             }

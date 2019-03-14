@@ -98,7 +98,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         notification.saveInBackground {
             (success, error) in
             if success {
-                print("Notification successfully saved")
             }
         }
         

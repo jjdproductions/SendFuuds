@@ -39,7 +39,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         } catch {
-            print("error")
         }
     }
     
@@ -80,7 +79,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 userObject = u
             }
         } catch {
-            print("error")
         }
         //accessing friend's col
         var friends = userObject["friends"] as! [String]

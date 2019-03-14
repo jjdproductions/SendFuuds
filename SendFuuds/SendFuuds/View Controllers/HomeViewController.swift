@@ -50,9 +50,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         selectedPost.saveInBackground { (success, error) in
             if success {
-                print("comment saved")
-            } else {
-                print("error")
             }
         }
         self.loadPosts()
@@ -94,7 +91,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 userObject = u
             }
         } catch {
-            print("error")
         }
         //this is an array that contains all the current user's friends and the current user
         var friends = userObject["friends"] as! [String]

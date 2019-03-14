@@ -97,7 +97,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             userInfo.saveInBackground {
                 (success, error) in
                 if success {
-                    print("UserInfo successfully saved")
                 }
             }
             

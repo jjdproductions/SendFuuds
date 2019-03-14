@@ -155,7 +155,8 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
    | notifyDay | Date | the date that user will get notified |
    | createdAt | Date | Date that the object was created |
    | updatedAt | Date | Date that the object has been updated |
-   | comments        | array of Comments objects | all comments on the food post| 
+   | comments        | array of Comments objects | all comments on the food post|
+   | numComments | Integer | Number of comments in the comments array |
    
 #### Comments
 

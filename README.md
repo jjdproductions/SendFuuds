@@ -107,9 +107,14 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
     
 ## Wireframes
 
-https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
+### Digital Mockup
+<img src='wireframes/wireframe.png' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
+### Interactive Prototype
 <img src='wireframes/wireframe.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
+
+### Source
+https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
 
 ## Schema 
 ### Models

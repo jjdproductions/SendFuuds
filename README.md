@@ -56,7 +56,8 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [ ] When a User comments on a post, the creator of the post gets a push notification. 
 - [ ] User can privately message other users
 - [ ] User can see mutual friends.
-- [ ] User can search for specific food in their feed. 
+- [ ] User can search for specific food in their feed.
+- [ ] User can link other social media platforms ( Instagram, Facebook, Twitter, etc.)
 
 ### App Screen Archetypes
 
@@ -75,6 +76,8 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
  * Profile Screen
      * User can see their own posts.
      * Future feature - User has profile image, description, and more information.
+ * Comment Screen
+     * User can comment on their friend's public post
 
 ### App Navigation Flows
 
@@ -94,6 +97,7 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
     * Future version might involve navigation to a profile page for a user.
     * Any other screen by clicking one of them on the tab bar.
     * Login screen by clicking logout.
+    * Comment screen by clicking on a specific post.
  * Creation (Post Screen)
     * Home after a user posts their food.
     * Any other screen by clicking one of them on the tab bar.
@@ -103,6 +107,9 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
     * Login screen by clicking logout.
  * Notification Screen
     * Any other screen by clicking one of them on the tab bar.
+    * Login screen by clicking logout.
+ * Comment Screen
+    * Home by clicking the back button.
     * Login screen by clicking logout.
     
 ## Wireframes
@@ -125,8 +132,8 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
    | ------------- | -------- | ------------|
    | username      | String   | user's unique username |
    | password        | String | user's password | 
-   | createdAt | Date | Date that the user table was created |
-   | updatedAt | Date | Date that the user table has been updated |
+   | createdAt | Date | Date that the object was created |
+   | updatedAt | Date | Date that the object has been updated |
    
 #### userInfo
 
@@ -134,8 +141,8 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
    | ------------- | -------- | ------------|
    | username      | String   | user's unique username |
    | friends        | array of String | array of user's friends| 
-   | createdAt | Date | Date that the user table was created |
-   | updatedAt | Date | Date that the user table has been updated |
+   | createdAt | Date | Date that the object was created |
+   | updatedAt | Date | Date that the object has been updated |
    
 #### Foods
 
@@ -146,8 +153,31 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
    | description | String | description of user's food |
    | date | Date | the expiration date of the food | 
    | notifyDay | Date | the date that user will get notified |
-   | createdAt | Date | Date that the user table was created |
-   | updatedAt | Date | Date that the user table has been updated |
+   | createdAt | Date | Date that the object was created |
+   | updatedAt | Date | Date that the object has been updated |
+   | comments        | array of Comments objects | all comments on the food post| 
+   
+#### Comments
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | author      | String   | user's unique username |
+   | food        | Food object | pointer to the food object that this comment refers to |
+   | text      | String   | the comment's text |
+   | createdAt | Date | Date that the object was created |
+   | updatedAt | Date | Date that the object has been updated |
+   
+#### Notifications
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | username      | String   | user's unique username |
+   | text      | String   | the notification's text |
+   | image        | image file (any is taken) | user's image of their food |
+   | food        | Food object | pointer to the food object that this notification refers to |
+   | day      | Date   | Date that user will be notified |
+   | createdAt | Date | Date that the object was created |
+   | updatedAt | Date | Date that the object has been updated |
   
 
 ## Walkthrough
@@ -184,3 +214,5 @@ SendFuuds implemented by **JJDProductions:**
 ### Process of building this application
 
 All authors collaborated together on 1 laptop at a time. Work was always done together and all features were implemented as a team. 
+
+ 

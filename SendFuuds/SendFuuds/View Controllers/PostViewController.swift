@@ -86,6 +86,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         food["owner"] = PFUser.current()!.username!
         food["public"] = false
         food["notification"] = notification
+        food["numComments"] = 0
         
         let imageData = foodImageView.image!.pngData()
         

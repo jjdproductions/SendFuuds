@@ -70,17 +70,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     @objc func notificationReceived()
     {
+        let query = PFQuery(className: "Foods")
+        query.includeKeys(["owner", "description", "image", "public", "comments", "numComments"])
+        query.whereKey("owner", equalTo: PFUser.current()!.username!)
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "WOW"
-        content.body = "wow"
-        content.sound = UNNotificationSound.default
-        
-        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        print("wow")
+        query.findObjectsInBackground { (foods, error) in
+            if foods != nil {
+                for food in foods! {
+                    let comments = (food["comments"] as? [PFObject]) ?? []
+                    if (comments.count > food["numComments"] as! Int) {
+                        food["numComments"] = comments.count
+                        food.saveInBackground()
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                        
+                        let content = UNMutableNotificationContent()
+                        content.title = (food["description"] as? String) ?? "One of your foods"
+                        content.body = "has received a new comment!"
+                        content.sound = UNNotificationSound.default
+                        
+                        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                    }
+                }
+            }
+        }
     }
 
 

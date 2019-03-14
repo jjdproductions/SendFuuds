@@ -125,6 +125,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ysl-bw-vYs" kind="relationship" relationship="viewControllers" id="9pE-i6-Zsl"/>
@@ -487,7 +488,9 @@
         <scene sceneID="1nG-5i-zMj">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Ysl-bw-vYs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="OXX-Ta-VUD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="OXX-Ta-VUD">
+                        <color key="badgeColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eg5-y8-WnK">
@@ -623,7 +626,9 @@
         <scene sceneID="OGt-YF-0LC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="83c-fT-VMU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="BBW-6K-3b9"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="BBW-6K-3b9">
+                        <color key="badgeColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2AV-VO-kD7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1048,11 +1053,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="vaS-1C-Iab">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Ay8-JL-Jvh">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onBack:" destination="yfj-Ld-gzb" id="akQ-Ml-iZp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="COF-bb-qix">
+                            <color key="tintColor" red="0.41767856380000001" green="0.77742239199999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onLogout:" destination="yfj-Ld-gzb" id="3pi-5N-HG9"/>
                             </connections>

@@ -107,14 +107,9 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
     
 ## Wireframes
 
-**Hand-Drawn:**
-
-<img src='https://i.imgur.com/AXiMMlk.jpg' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
-
-**Digital:**
 https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&scaling=scale-down
 
-<img src='https://i.imgur.com/ZKQlv1m.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
+<img src='wireframes/wireframe.gif' title='Wireframe Walkthrough' width='' alt='Wireframe Walkthrough' />
 
 ## Schema 
 ### Models

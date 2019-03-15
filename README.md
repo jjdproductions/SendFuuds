@@ -39,25 +39,25 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [x] User can log out.
 - [x] User must enter correct login/sign up credentials
 - [x] User can enter the expiration date and description of their food and post it to their personal list of foods.
-- [x] User can share their post publicly to the home feed.  
+- [x] User can share their post publicly to the home feed.
+- [x] User can remove their own posts from the personal list.
 - [x] User can post an image from either their photo gallery or camera. 
 - [x] User can search and add friends.
 - [x] User can only see their own posts and their friends' posts on the home feed.
-- [x] User gets notified when their food is about to expire.
-- [x] User can remove their own posts from the personal list.
 - [x] User can comment on other user's posts. 
 - [x] User gets notified when their food is about to expire.
 
 **Optional Nice-to-have Stories**
+- [x] When a User comments on a post, the creator of the post gets a push notification when the app is in the background.
+- [ ] When a User comments on a post, the creator of the post gets a push notification even if the app is terminated.
 - [ ] Users have a fully functional profile page, as opposed to just a personal list of food. 
 - [ ] To add a friend, a User should send a friend request to another User, and the other User has to accept that request in order for the two Users to be friends. 
 - [ ] User can remove friends. 
 - [ ] Once a food is expired, the food should be deleted from the User's personal list and home feed.
-- [ ] When a User comments on a post, the creator of the post gets a push notification. 
 - [ ] User can privately message other users
 - [ ] User can see mutual friends.
 - [ ] User can search for specific food in their feed.
-- [ ] User can link other social media platforms ( Instagram, Facebook, Twitter, etc.)
+- [ ] User can link other social media platforms (Instagram, Facebook, Twitter, etc.)
 
 ### App Screen Archetypes
 

@@ -190,13 +190,13 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 - [x] User stays logged in across restarts.
 - [x] User can log out.
 
-<img src='walkthroughs/login_signup.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/login_signup.gif' title='Walkthrough' width='' alt='' />
 
 ### Checking credentials
 **Walkthrough of the following user stories:**
 - [x] User must enter correct login/sign up credentials
 
-<img src='walkthroughs/credentials.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/credentials.gif' title='Walkthrough' width='' alt='' />
 
 ### Posting and removing posts
 **Walkthrough of the following user stories:**
@@ -204,7 +204,7 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 - [x] User can remove their own posts from their personal list
 - [x] User can post an image from either their photo gallery or camera. 
 
-<img src='walkthroughs/posting.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/posting.gif' title='Walkthrough' width='' alt='' />
 
 ### Adding friends and sharing posts with friends
 **Walkthrough of the following user stories:**
@@ -212,25 +212,25 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 - [x] User can search and add friends.
 - [x] User can only see their own posts and their friends' posts on the home feed.
 
-<img src='walkthroughs/friends.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/friends.gif' title='walkthrough' width='' alt='' />
 
 ### Commenting on posts
 **Walkthrough of the following user stories:**
 - [x] User can comment on other user's posts. 
 
-<img src='walkthroughs/comment.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/comment.gif' title='walkthrough' width='' alt='' />
 
 ### Notification of food expiration
 **Walkthrough of the following user stories:**
 - [x] User gets notified when their food is about to expire.
 
-<img src='walkthroughs/notify_expire.gif' title='walkthough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/notify_expire.gif' title='walkthough' width='' alt='' />
 
 ### Comment Notification
 **Walkthrough of the following user stories:**
 - [x] When a User comments on a post, the creator of the post gets a push notification when the app is in the background.
 
-<img src='walkthroughs/notify_comment.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/notify_comment.gif' title='walkthrough' width='' alt='' />
 
 
 ### Walkthrough of our first prototype

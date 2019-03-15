@@ -9,16 +9,12 @@
 import UIKit
 import Parse
 import UserNotifications
-import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
-
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Parse.initialize(
@@ -69,30 +65,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     @objc func notificationReceived()
     {
-        let query = PFQuery(className: "Foods")
-        query.includeKeys(["owner", "description", "image", "public", "comments", "numComments"])
-        query.whereKey("owner", equalTo: PFUser.current()!.username!)
+        if PFUser.current() != nil {
+            let query = PFQuery(className: "Foods")
+            query.includeKeys(["owner", "description", "image", "public", "comments", "numComments"])
+            query.whereKey("owner", equalTo: PFUser.current()!.username!)
         
-        query.findObjectsInBackground { (foods, error) in
-            if foods != nil {
-                for food in foods! {
-                    let comments = (food["comments"] as? [PFObject]) ?? []
-                    if (comments.count > food["numComments"] as! Int) {
-                        let newest = comments[comments.count - 1]
-                        if (newest["author"] as!String) == PFUser.current()!.username! {
-                            food["numComments"] = comments.count
-                        } else {
-                            food["numComments"] = comments.count
-                            food.saveInBackground()
-                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-                            
-                            let content = UNMutableNotificationContent()
-                            content.title = (food["description"] as? String) ?? "One of your foods"
-                            content.body = "has received a new comment!"
-                            content.sound = UNNotificationSound.default
-                            
-                            let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
-                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            query.findObjectsInBackground { (foods, error) in
+                if foods != nil {
+                    for food in foods! {
+                        let comments = (food["comments"] as? [PFObject]) ?? []
+                        if (comments.count > food["numComments"] as! Int) {
+                            let newest = comments[comments.count - 1]
+                            if (newest["author"] as!String) == PFUser.current()!.username! {
+                                food["numComments"] = comments.count
+                            }
+                            else {
+                                food["numComments"] = comments.count
+                                food.saveInBackground()
+                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                                
+                                let content = UNMutableNotificationContent()
+                                content.title = (food["description"] as? String) ?? "One of your foods"
+                                content.body = "has received a new comment!"
+                                content.sound = UNNotificationSound.default
+                                
+                                let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+                                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                            }
                         }
                     }
                 }
@@ -103,16 +102,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
         var bgTask = UIBackgroundTaskIdentifier(rawValue: 0)
         bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
             UIApplication.shared.endBackgroundTask(bgTask)
         })
         let timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(notificationReceived), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
-        
-        
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

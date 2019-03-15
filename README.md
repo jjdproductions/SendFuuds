@@ -200,7 +200,7 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 
 ## App-Pitch-Presentation
 
-**Coming Soon**
+Link to slideshow: https://docs.google.com/presentation/d/1Pi85jbgGdUlxdtAM7uu35Dkz8yFu3WYfm1H8trJfX3g/edit?usp=sharing
 
 ## Authors
 

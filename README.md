@@ -12,7 +12,7 @@
 ## Overview
 
 ### App Description
-Have you ever had food that you couldn't finish, and just ended up throwing it away? Chances are, you have. 
+Have you ever forgotten about a food you bought, and just ended up throwing it away because it expired? Chances are, you have. 
 
 **JJDProductions** aims to solve this huge problem in the world today with **SendFuuds**.
 
@@ -39,9 +39,9 @@ Uses [Parse](https://docs.parseplatform.org/parse-server/guide/) for storing dat
 - [x] User can log out.
 - [x] User must enter correct login/sign up credentials
 - [x] User can enter the expiration date and description of their food and post it to their personal list of foods.
-- [x] User can share their post publicly to the home feed.
-- [x] User can remove their own posts from the personal list.
+- [x] User can remove their own posts from their personal list
 - [x] User can post an image from either their photo gallery or camera. 
+- [x] User can share their post publicly to the home feed.
 - [x] User can search and add friends.
 - [x] User can only see their own posts and their friends' posts on the home feed.
 - [x] User can comment on other user's posts. 
@@ -183,52 +183,57 @@ https://www.figma.com/proto/BNQyBUMhIxUdroJeTUbXtPLb/SendFuuds?node-id=0%3A1&sca
 
 ## Walkthrough
 
+### Signing up/logging in
 **Walkthrough of the following user stories:**
 - [x] User can log in
 - [x] User can sign up
 - [x] User stays logged in across restarts.
 - [x] User can log out.
 
-<img src='walkthroughs/login_signup.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/login_signup.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
 
+### Checking credentials
 **Walkthrough of the following user stories:**
 - [x] User must enter correct login/sign up credentials
 
-<img src='walkthroughs/credentials.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/credentials.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
 
+### Posting and removing posts
 **Walkthrough of the following user stories:**
 - [x] User can enter the expiration date and description of their food and post it to their personal list of foods.
 - [x] User can remove their own posts from their personal list
 - [x] User can post an image from either their photo gallery or camera. 
 
-<img src='walkthroughs/posting.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/posting.gif' title='Walkthrough' width='' alt='Part 1 Walkthrough' />
 
+### Adding friends and sharing posts with friends
 **Walkthrough of the following user stories:**
 - [x] User can share their post publicly to the home feed.
 - [x] User can search and add friends.
 - [x] User can only see their own posts and their friends' posts on the home feed.
 
-<img src='walkthroughs/friends.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/friends.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
 
+### Commenting on posts
 **Walkthrough of the following user stories:**
 - [x] User can comment on other user's posts. 
 
-<img src='walkthroughs/comment.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/comment.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
 
+### Notification of food expiration
 **Walkthrough of the following user stories:**
 - [x] User gets notified when their food is about to expire.
 
-<img src='walkthroughs/notify_expire.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/notify_expire.gif' title='walkthough' width='' alt='Part 1 Walkthrough' />
 
+### Comment Notification
 **Walkthrough of the following user stories:**
 - [x] When a User comments on a post, the creator of the post gets a push notification when the app is in the background.
 
-<img src='walkthroughs/notify_comment.gif' title='Part 1 Walkthrough' width='' alt='Part 1 Walkthrough' />
+<img src='walkthroughs/notify_comment.gif' title='walkthrough' width='' alt='Part 1 Walkthrough' />
 
 
-
-
-### Walkthrough from first prototype
+### Walkthrough of our first prototype
 **Walkthrough of the following user stories:**
 
 - [x] User can log in

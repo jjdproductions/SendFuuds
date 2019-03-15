@@ -43,7 +43,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         let comment = PFObject(className: "Comments")
         comment["text"] = text
-        comment["author"] = PFUser.current()!
+        comment["author"] = PFUser.current()!.username
         
         food.add(comment, forKey: "comments")
         
@@ -157,8 +157,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let comment = comments[indexPath.row - 1]
             cell.commentLabel.text = comment["text"] as? String
             
-            let user = comment["author"] as! PFUser
-            cell.nameLabel.text = user.username
+            let user = comment["author"] as! String
+            cell.nameLabel.text = user
             
             return cell
             

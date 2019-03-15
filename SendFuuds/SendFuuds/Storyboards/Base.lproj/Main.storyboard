@@ -322,7 +322,7 @@
                                                         <constraint firstAttribute="width" secondItem="Son-O8-B1D" secondAttribute="height" multiplier="359:226" id="01n-xb-IxT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-X0-biK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Owner:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-X0-biK">
                                                     <rect key="frame" x="16" y="242" width="60" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1118,6 +1118,6 @@
         <image name="photo-camera" width="384" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xcT-wP-8NI"/>
+        <segue reference="29U-94-iPx"/>
     </inferredMetricsTieBreakers>
 </document>
